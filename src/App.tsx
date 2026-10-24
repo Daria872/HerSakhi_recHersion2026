@@ -27,6 +27,7 @@ import { ConsultationsView } from "./pages/ConsultationsView";
 import { ClinicsView } from "./pages/ClinicsView";
 import { OnboardingView } from "./pages/OnboardingView";
 import { AuthView } from "./pages/AuthView";
+import { EvolutionAnimation } from "./components/EvolutionAnimation";
 
 export default function App() {
   const [user, setUser] = useState<UserProfile>({
@@ -53,6 +54,7 @@ export default function App() {
   });
 
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isEvolutionPlaying, setIsEvolutionPlaying] = useState<boolean>(false);
 
   const [activeTab, setActiveTab] = useState<NavTab>("home-dashboard");
   const [isOnboarding, setIsOnboarding] = useState(false);
@@ -145,12 +147,15 @@ export default function App() {
   const handleLoginSuccess = (loggedInUser: UserProfile, token?: string) => {
     setUser(loggedInUser);
     setIsAuthenticated(true);
+    // Play evolution animation every time user signs up / logs in before main dashboard
+    setIsEvolutionPlaying(true);
   };
 
   const handleLogout = () => {
     localStorage.removeItem("hersakhi_user");
     localStorage.removeItem("hersakhi_token");
     setIsAuthenticated(false);
+    setIsEvolutionPlaying(false);
     setIsProfileOpen(false);
   };
 
@@ -166,6 +171,16 @@ export default function App() {
       >
         <AuthView onLoginSuccess={handleLoginSuccess} />
       </div>
+    );
+  }
+
+  // Evolution animation screen displayed after login/signup on loop until "Come On Sakhi!" is clicked
+  if (isEvolutionPlaying) {
+    return (
+      <EvolutionAnimation
+        userName={user.preferredName || "Sakhi"}
+        onContinue={() => setIsEvolutionPlaying(false)}
+      />
     );
   }
 
