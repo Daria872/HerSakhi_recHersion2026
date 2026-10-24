@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>SheShines (HerSakhi)</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fff8f9;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#807478", "on-primary": "#ffffff", "on-primary-fixed": "#2e1222", "tertiary-fixed-dim": "#adcebe", "tertiary-container": "#2e4c40", "surface-container-lowest": "#ffffff", "primary": "#452536", "on-surface": "#23191f", "secondary": "#98434c", "surface-bright": "#fff8f9", "error-container": "#ffdad6", "on-secondary": "#ffffff", "inverse-primary": "#e9b9cf", "on-primary-container": "#d5a7bc", "surface": "#fff8f9", "on-tertiary-fixed-variant": "#2f4d40", "surface-variant": "#f0dee6", "on-background": "#23191f", "surface-container-high": "#f6e3ec", "surface-tint": "#795366", "tertiary-fixed": "#c8ead9", "surface-dim": "#e8d5de", "outline-variant": "#d2c3c8", "secondary-container": "#fe959d", "surface-container-low": "#fff0f6", "secondary-fixed-dim": "#ffb2b7", "secondary-fixed": "#ffdadb", "on-secondary-fixed": "#40010e", "on-surface-variant": "#4f4448", "on-secondary-fixed-variant": "#7a2c36", "primary-fixed-dim": "#e9b9cf", "on-error": "#ffffff", "inverse-on-surface": "#ffecf4", "tertiary": "#17352a", "on-secondary-container": "#782b34", "primary-fixed": "#ffd8e9", "on-tertiary-container": "#9bbbac", "background": "#fff8f9", "surface-container-highest": "#f0dee6", "surface-container": "#fce9f1", "inverse-surface": "#382d34", "primary-container": "#5e3b4d", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "error": "#ba1a1a", "on-primary-fixed-variant": "#5f3c4e", "on-tertiary-fixed": "#012016" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "margin-tablet": "2rem", "margin": "1rem", "space-xl": "2.5rem", "gutter": "1rem", "gutter-desktop": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "margin-desktop": "3rem", "gutter-tablet": "1.5rem" }, "fontFamily": { "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "headline-md": ["Playfair Display"], "title-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Playfair Display"], "headline-lg": ["Playfair Display"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(94,59,77,0.05)]"><div class="h-20 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="SheShines Emblem" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VJB4BQAnu52zg06dSAuVGnTqXHoyeZnZZsI2o3G0biiIq7B2U8L_wlXM34b4eUPz6Sw5l7eTwAH4ZXdK2G_hfrunSwQOBaGLyFdQoqAEz8AX6Td7k4ECHRVV4pm1Y56Diw78d88MdGDA9rc45R_MqSYRhXwFGvaeg6quKMmIJR4vK-0TLHjc-pb0PakNUqMbhBgoRhHqffOYBwUnRpyfhREGeOiDZ4SHEpSC_ZRnTRloyc5vqyZowNStI"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">SheShines</span></div><span class="font-label-sm text-label-sm text-secondary font-medium tracking-wide leading-none">HerSakhi • हरसखी</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button class="min-h-[44px] min-w-[44px] px-space-sm py-space-xs bg-surface-container-low hover:bg-surface-container rounded-full flex items-center gap-1 text-on-surface-variant transition-colors" title="Change Language" type="button"><span class="material-symbols-outlined text-[18px] text-primary">translate</span><span class="font-label-sm text-label-sm font-semibold text-primary">EN / हिं</span></button><button class="min-h-[44px] min-w-[44px] rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-primary transition-colors" title="Accessibility: Font Size &amp; Voice Reading" type="button"><span class="material-symbols-outlined text-[20px]">accessibility_new</span></button><div class="min-w-[44px] min-h-[44px] flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKIayKTabfZJ7BGbBzSmKqsCcKtkNTAETtO6xyhMxGS2zk1jbgmla4qun_2-YN83ctwgxp2piyYLYs1XZhfWmlbhmuLE7Z3x67CuF_TrUJfpjjJ9gu2CvoACA5pdxtyjiIOGIKgTSX5XUEoKl6m12s-MZTfW6R-rlTcLTppvqbfJf5ZN4SA4EKPKNqCb0hBCZxLzlB0F11Fp-4-FsupPdtlOmbFb3ZJI8SVAO02g1rgEiuwtTES9Bk"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-24 bg-surface"><div class="flex flex-col w-full px-space-md gap-space-lg">
+<!-- Subtle Discreet Quick Exit Header Strip -->
+<div class="flex items-center justify-between py-space-xs">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]">spa</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase font-semibold">Sanctuary • सुकून कुंज</span>
+</div>
+<button class="flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm shadow-sm" onclick="window.location.reload();" title="Discreet Quick Hide" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span>
+<span>Quick Exit (Weather)</span>
+</button>
+</div>
+<!-- Warm Grounding Greeting Hero Card -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-surface-container-low via-surface-container-high to-surface-container p-space-lg shadow-sm">
+<div class="flex flex-col gap-space-xs relative z-10">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 text-secondary w-fit shadow-xs">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+<span class="font-label-sm text-label-sm font-semibold">Safe Space Active</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1 tracking-tight">
+        Take a gentle breath, Ananya.
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        You are safe here. Put down whatever you are carrying, even just for this single moment.
+      </p>
+</div>
+<!-- Soft Decorative Flora Watermark -->
+<div class="absolute -right-6 -bottom-6 w-36 h-36 rounded-full bg-secondary-fixed/30 blur-2xl pointer-events-none"></div>
+</div>
+<!-- Interactive 4-7-8 Breathing Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-md flex flex-col items-center text-center relative overflow-hidden">
+<div class="w-full flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[20px]">air</span>
+<span class="font-title-md text-title-md font-semibold">4-7-8 Pranayama Breath</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-semibold">Calming Pulse</span>
+</div>
+<!-- Ambient Breathing Circle Canvas -->
+<div class="relative my-space-md flex items-center justify-center w-56 h-56">
+<!-- Outer Pulsing Glow Wave -->
+<div class="absolute w-44 h-44 rounded-full bg-secondary-fixed/40 transition-all duration-1000 ease-in-out" id="breathGlow"></div>
+<div class="absolute w-36 h-36 rounded-full bg-surface-container-high transition-all duration-1000 ease-in-out shadow-inner" id="breathRing"></div>
+<!-- Core Visual Indicator -->
+<div class="relative z-10 flex flex-col items-center justify-center p-4">
+<span class="font-headline-sm text-headline-sm text-primary transition-all duration-300" id="breathPhaseText">Ready</span>
+<span class="font-label-md text-label-md text-secondary mt-0.5" id="breathTimerNum">Tap to begin</span>
+</div>
+</div>
+<!-- Breath Action CTA -->
+<div class="flex items-center gap-space-sm w-full mt-space-xs">
+<button class="flex-1 py-3 px-space-md rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm flex items-center justify-center gap-2 transition-all" id="breathActionBtn" type="button">
+<span class="material-symbols-outlined text-[20px]" id="breathActionIcon">play_circle</span>
+<span id="breathActionLabel">Start Gentle Breath</span>
+</button>
+<button class="p-3 rounded-full bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" id="breathResetBtn" title="Reset Cycle" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+<!-- Ambient Soundscape Selector -->
+<div class="w-full mt-space-md pt-space-sm flex flex-col gap-2 bg-surface-container-low/60 p-space-sm rounded-lg">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[16px]">graphic_eq</span>
+          Ambient Soundscape
+        </span>
+<span class="font-label-sm text-label-sm text-secondary" id="soundPlayingState">Kerala Rain</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5 w-full">
+<button class="sound-chip px-2 py-1.5 rounded-full text-label-sm font-label-sm transition-all bg-primary text-on-primary shadow-xs" data-sound="Rain in Kerala" type="button">
+          🌧️ Rain
+        </button>
+<button class="sound-chip px-2 py-1.5 rounded-full text-label-sm font-label-sm transition-all bg-surface-container-highest text-on-surface-variant hover:bg-surface-container" data-sound="Temple Bells" type="button">
+          🔔 Bells
+        </button>
+<button class="sound-chip px-2 py-1.5 rounded-full text-label-sm font-label-sm transition-all bg-surface-container-highest text-on-surface-variant hover:bg-surface-container" data-sound="Forest Dawn" type="button">
+          🍃 Forest
+        </button>
+<button class="sound-chip px-2 py-1.5 rounded-full text-label-sm font-label-sm transition-all bg-surface-container-highest text-on-surface-variant hover:bg-surface-container" data-sound="Silent" type="button">
+          🔇 Silent
+        </button>
+</div>
+</div>
+</div>
+<!-- Daily Emotional & Mental Check-in -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-semibold text-secondary tracking-wider">Heart Mirror • मन का आईना</span>
+<h2 class="font-title-lg text-title-lg text-primary mt-0.5">How is your heart feeling today?</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">There are no wrong answers. Whatever you feel is valid.</p>
+</div>
+<span class="material-symbols-outlined text-[28px] text-secondary-container p-2 rounded-full bg-surface-container-low">wb_twilight</span>
+</div>
+<!-- Mood Tags Selector -->
+<div class="flex flex-wrap gap-2" id="moodTagsContainer">
+<button class="mood-pill px-4 py-2 rounded-full bg-surface-container-low text-primary text-label-md font-label-md hover:bg-surface-container transition-all flex items-center gap-1.5" type="button">
+<span>🌊</span> Overwhelmed
+      </button>
+<button class="mood-pill px-4 py-2 rounded-full bg-surface-container-high text-primary font-semibold text-label-md font-label-md shadow-xs flex items-center gap-1.5" type="button">
+<span>🕊️</span> Peaceful
+      </button>
+<button class="mood-pill px-4 py-2 rounded-full bg-surface-container-low text-primary text-label-md font-label-md hover:bg-surface-container transition-all flex items-center gap-1.5" type="button">
+<span>⚡</span> Anxious
+      </button>
+<button class="mood-pill px-4 py-2 rounded-full bg-surface-container-low text-primary text-label-md font-label-md hover:bg-surface-container transition-all flex items-center gap-1.5" type="button">
+<span>🌱</span> Hopeful
+      </button>
+<button class="mood-pill px-4 py-2 rounded-full bg-surface-container-low text-primary text-label-md font-label-md hover:bg-surface-container transition-all flex items-center gap-1.5" type="button">
+<span>🥀</span> Exhausted
+      </button>
+<button class="mood-pill px-4 py-2 rounded-full bg-surface-container-low text-primary text-label-md font-label-md hover:bg-surface-container transition-all flex items-center gap-1.5" type="button">
+<span>🌪️</span> Stressed
+      </button>
+</div>
+<!-- Empathetic Note Feed -->
+<div class="p-space-md rounded-lg bg-surface-container-low text-on-surface-variant flex items-center gap-3" id="moodReflectionBox">
+<span class="material-symbols-outlined text-secondary text-[22px]">self_improvement</span>
+<p class="font-body-sm text-body-sm leading-normal">
+        "Peaceful moments nurture resilience. Hold onto this gentle calmness throughout your day."
+      </p>
+</div>
+</div>
+<!-- Weekly Mental Health Rhythm & Menstrual Cycle Phases -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Hormonal &amp; Mood Insights</span>
+<h2 class="font-title-lg text-title-lg text-primary">Weekly Mood Rhythm</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-high text-primary px-3 py-1 rounded-full font-semibold">Luteal Phase (Day 22)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+      Progesterone shifts in late luteal can heighten sensory sensitivity and inward reflection. Be extra soft with yourself.
+    </p>
+<!-- Custom SVG Chart: Mood trend mapped to cycle days -->
+<div class="w-full bg-surface-container-low/50 rounded-lg p-space-sm pt-space-md">
+<div class="flex justify-between items-center px-2 mb-2 text-label-sm font-label-sm text-on-surface-variant">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span class="text-primary font-bold">Today</span>
+</div>
+<svg class="w-full h-24 overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 320 90">
+<!-- Cycle phase background bands -->
+<rect fill="rgba(240, 222, 230, 0.3)" height="90" rx="6" width="130" x="0" y="0"></rect>
+<rect fill="rgba(254, 149, 157, 0.15)" height="90" rx="6" width="185" x="135" y="0"></rect>
+<!-- Smooth Mood Curve -->
+<path d="M 15 50 Q 55 25 105 45 T 205 60 T 260 30 T 305 20" fill="none" stroke="#98434c" stroke-linecap="round" stroke-width="3"></path>
+<!-- Shaded fill under curve -->
+<path d="M 15 50 Q 55 25 105 45 T 205 60 T 260 30 T 305 20 L 305 85 L 15 85 Z" fill="rgba(254, 149, 157, 0.2)"></path>
+<!-- Data Dots -->
+<circle cx="15" cy="50" fill="#452536" r="4"></circle>
+<circle cx="65" cy="30" fill="#452536" r="4"></circle>
+<circle cx="115" cy="48" fill="#452536" r="4"></circle>
+<circle cx="165" cy="58" fill="#452536" r="4"></circle>
+<circle cx="215" cy="40" fill="#452536" r="4"></circle>
+<circle cx="265" cy="30" fill="#452536" r="4"></circle>
+<circle cx="305" cy="20" fill="#98434c" r="6"></circle>
+<circle cx="305" cy="20" r="9" stroke="#98434c" stroke-opacity="0.4" stroke-width="2"></circle>
+</svg>
+<div class="flex items-center justify-between px-2 mt-2 font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Mood Vitality
+        </span>
+<span class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-high"></span> Follicular
+        </span>
+<span class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span> Luteal
+        </span>
+</div>
+</div>
+</div>
+<!-- Grounding & Somatic Exercises -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Somatic Grounding</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Somatic &amp; Nervous System Reset</h2>
+</div>
+</div>
+<!-- 5-4-3-2-1 Sensory Grounding Guide Interactive Slider Cards -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-primary font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">touch_app</span>
+          5-4-3-2-1 Sensory Anchor
+        </h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">3 min exercise</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Bring your awareness out of spirals and back into your physical surroundings:
+      </p>
+<!-- Step Cards Grid -->
+<div class="grid grid-cols-1 gap-2.5 mt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-label-lg font-label-lg">5</span>
+<div>
+<p class="font-title-md text-body-md font-semibold text-primary">Things you can see</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Notice sunlight, colors, textures around you.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">visibility</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-label-lg font-label-lg">4</span>
+<div>
+<p class="font-title-md text-body-md font-semibold text-primary">Things you can touch</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Feel fabric, ring on finger, floor under feet.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">pan_tool</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-label-lg font-label-lg">3</span>
+<div>
+<p class="font-title-md text-body-md font-semibold text-primary">Sounds you can hear</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Traffic hum, fan blades, your soft breath.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">hearing</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-label-lg font-label-lg">2</span>
+<div>
+<p class="font-title-md text-body-md font-semibold text-primary">Scents you can smell</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Warm tea, soap, rain on dust.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">view_in_ar_new</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-label-lg font-label-lg">1</span>
+<div>
+<p class="font-title-md text-body-md font-semibold text-primary">Taste or affirmation</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A sip of water, or 'I am grounded and present.'</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">sentiment_very_satisfied</span>
+</div>
+</div>
+</div>
+<!-- Pelvic & Lower Back Tension Relief Stretch Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Body Tension Release</span>
+<h3 class="font-title-lg text-title-lg text-primary">Pelvic &amp; Sacral Soothing Guide</h3>
+</div>
+<span class="material-symbols-outlined text-secondary text-[26px]">accessibility_new</span>
+</div>
+<div class="relative w-full h-44 rounded-lg overflow-hidden my-space-xs shadow-xs">
+<img class="w-full h-full object-cover" data-alt="A soft, serene photograph with gentle diffused lavender and rose lighting, showing an Indian woman gently practicing a supported child's pose with cushions for restorative pelvic floor relaxation, soothing calm aesthetic, warm minimal room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvCYv_ZcStTIHgNe_qywQgeO_g5Saj0NiBttQZ9bAGAkUwCnC4KB1nqzpkoZNEAX8ylj-KtjK22yfmG7FWGXkge0CwXLjCkavwGeHn5hJQVU5jHCRuGbIHmn1B89qUnMDgVPDSBLlEz-TnohF8_MVgzIA3NLM2d5IjtEpiC2FnZkP0efP25LnMkrwsCFb62SHdP65QFN5kNBtbZ4GzIWkJVkRiyTEjEHdK6UV0wo91NoGFclPFg_B1"/>
+<div class="absolute bottom-2 left-2 px-3 py-1 bg-surface-container-lowest/90 backdrop-blur-md rounded-full text-label-sm font-label-sm text-primary font-semibold">
+          Balasana (Supported Child's Pose)
+        </div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Wide Knee Release:</strong> Spread knees wide on a soft mat or bed, sinking hips back to your heels.
+          </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Belly Softening:</strong> Rest your forehead on a pillow. Allow pelvic floor muscles to fully drop and soften without tension.
+          </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Slow Lower Back Exhales:</strong> Inhale into your lower back ribs for 5 slow deep breaths.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Private Encrypted Safe Space Journal -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">lock</span>
+<h2 class="font-title-lg text-title-lg text-primary">Safe Space Journal</h2>
+</div>
+<!-- Biometric / Auto-encrypt Badge Toggle -->
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary text-on-tertiary text-label-sm font-label-sm shadow-xs transition-colors" id="lockToggleBtn" type="button">
+<span class="material-symbols-outlined text-[16px]" id="lockIcon">lock_clock</span>
+<span id="lockLabel">Auto-Encrypted</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Today's Reflection Prompt</span>
+<p class="font-title-md text-title-md text-primary font-medium">What weighs on your mind today? Let it pour here without shame.</p>
+</div>
+<!-- Journal Text Input Area -->
+<div class="flex flex-col gap-space-xs">
+<div class="relative">
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-md font-body-md focus:outline-none focus:ring-0 shadow-inner resize-none" id="journalArea" placeholder="Write freely... This is encrypted strictly on your device with biometric protection." rows="4"></textarea>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 text-outline">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors" title="Voice to text reflection" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">mic</span>
+</button>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Zero-knowledge local vault</span>
+</div>
+<button class="px-space-md py-2.5 rounded-full bg-secondary hover:bg-on-secondary-container text-on-secondary font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all" id="saveJournalBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">format_image_left</span>
+<span>Encrypt &amp; Save</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Verified Professional Care & Crisis Resources -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Compassionate Counsel</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Mental Health Support</h2>
+</div>
+<span class="material-symbols-outlined text-[26px] text-tertiary">support_agent</span>
+</div>
+<!-- Tele-MANAS Govt India Hotline Card -->
+<div class="rounded-lg bg-gradient-to-r from-tertiary to-tertiary-container text-on-tertiary p-space-md shadow-md flex items-center justify-between">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"></span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-semibold">24/7 Govt. Toll-Free Crisis Line</span>
+</div>
+<span class="font-title-lg text-title-lg font-bold">Tele-MANAS Support</span>
+<span class="font-body-sm text-body-sm text-tertiary-fixed-dim">Multilingual • Free • Confidential • 14416</span>
+</div>
+<a class="px-4 py-3 rounded-full bg-surface-container-lowest text-tertiary font-bold text-label-md font-label-md flex items-center gap-1.5 shadow-lg active:scale-95 transition-transform" href="tel:14416">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Dial 14416</span>
+</a>
+</div>
+<!-- Verified Female & Queer Affirmative Psychologists -->
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<span class="font-title-md text-title-md text-primary font-semibold">Verified Female &amp; Queer-Affirmative Therapists</span>
+<!-- Therapist Card 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Portrait of Dr. Priya Narang, a warm and empathetic Indian female clinical psychologist smiling gently in professional attire, soft daylight, warm neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2asQd3frggO8dNnO9mDnpGg3lX93qvCEvfLK960yqFBJoJEJNKZA8SxG2NTbNmTI4OuO2vWT1eOMLHT2x-P85WB6KMptMU_gbsSRiQJ9qBo2HALDdtQBvD7WUmRFJueDKfHh_-OQuRV1OS9uRqGer6YXXkm9GuECRZvZ82DheoHuIF1CC8Qm8m83Nx1Q9MDeW9lf2jHgQbiL3xvwLbA7wB7IgekJAStp7ulLw28V2vUY8Vju7NeXM"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md font-semibold text-primary truncate">Dr. Priya Narang</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary" title="Verified Practitioner">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary truncate">M.Phil Clinical Psych • Queer-Affirmative</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hindi, English • Next: Today 4:30 PM</span>
+</div>
+</div>
+<button class="shrink-0 px-3 py-2 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold transition-colors" type="button">
+          Book Video
+        </button>
+</div>
+<!-- Therapist Card 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Portrait of Shalini Sen, a compassionate young Indian female therapist wearing soft terracotta linen, friendly expression, quiet serene clinic background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2OViw3UhuvSvZ8f38OY8wBzowNDuUl-NSGotvKMJ-9GSj6f7cyZl48m4o_LBxKb1BM25peVSgUascDOHkEzZDo-Zl4A9Gd0VYh-ANio1gLQQqG-JtfwlNAM4OAYis9RKEFbfkbUXKxASBDzniIHTGdEA6o62B4q6yrTpMLnif69xtNFLLLIthNVXCLNpjkvnaDc5IXDrU2yQYGZuPYS4MYcaj6L9eBw-6ZQtj9cDGQkV1FHfSiJBR"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md font-semibold text-primary truncate">Shalini Sen, MSW</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary" title="Verified Practitioner">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary truncate">Somatic Trauma &amp; Postpartum Specialist</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bengali, Hindi, English • Tomorrow</span>
+</div>
+</div>
+<button class="shrink-0 px-3 py-2 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold transition-colors" type="button">
+          Book Video
+        </button>
+</div>
+</div>
+</div>
+<!-- End of Sanctuary Gentle Footer Note -->
+<div class="text-center py-space-sm">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+      🌸 You don't have to carry the whole world today. Just this moment is enough.
+    </p>
+</div>
+</div>
+<!-- Inline Interactive Script for 4-7-8 Breathing & State Toggles -->
+<script>
+  (function initSanctuaryInteractions() {
+    // 4-7-8 Breathing State Machine
+    let breathInterval = null;
+    let isBreathing = false;
+    let stepIndex = 0; // 0: inhale (4s), 1: hold (7s), 2: exhale (8s)
+    let countdown = 4;
+
+    const phases = [
+      { name: "Inhale slowly...", duration: 4, scale: "scale-125", glow: "scale-150 bg-secondary-fixed/70" },
+      { name: "Hold gently...", duration: 7, scale: "scale-125", glow: "scale-140 bg-primary-fixed/60" },
+      { name: "Exhale through mouth...", duration: 8, scale: "scale-90", glow: "scale-100 bg-secondary-fixed/30" }
+    ];
+
+    const phaseText = document.getElementById('breathPhaseText');
+    const timerNum = document.getElementById('breathTimerNum');
+    const breathRing = document.getElementById('breathRing');
+    const breathGlow = document.getElementById('breathGlow');
+    const actionBtn = document.getElementById('breathActionBtn');
+    const actionLabel = document.getElementById('breathActionLabel');
+    const actionIcon = document.getElementById('breathActionIcon');
+    const resetBtn = document.getElementById('breathResetBtn');
+
+    function updateBreathStep() {
+      const current = phases[stepIndex];
+      phaseText.textContent = current.name;
+      timerNum.textContent = countdown + "s remaining";
+
+      breathRing.className = "absolute w-36 h-36 rounded-full bg-surface-container-high transition-all duration-1000 ease-in-out shadow-inner " + current.scale;
+      breathGlow.className = "absolute w-44 h-44 rounded-full transition-all duration-1000 ease-in-out " + current.glow;
+
+      if (countdown <= 1) {
+        stepIndex = (stepIndex + 1) % 3;
+        countdown = phases[stepIndex].duration;
+      } else {
+        countdown--;
+      }
+    }
+
+    function startBreathing() {
+      if (isBreathing) {
+        clearInterval(breathInterval);
+        isBreathing = false;
+        actionLabel.textContent = "Resume Gentle Breath";
+        actionIcon.textContent = "play_circle";
+        phaseText.textContent = "Paused";
+        return;
+      }
+
+      isBreathing = true;
+      actionLabel.textContent = "Pause Breath";
+      actionIcon.textContent = "pause_circle";
+      countdown = phases[stepIndex].duration;
+      updateBreathStep();
+      breathInterval = setInterval(updateBreathStep, 1000);
+    }
+
+    function resetBreathing() {
+      clearInterval(breathInterval);
+      isBreathing = false;
+      stepIndex = 0;
+      countdown = 4;
+      actionLabel.textContent = "Start Gentle Breath";
+      actionIcon.textContent = "play_circle";
+      phaseText.textContent = "Ready";
+      timerNum.textContent = "Tap to begin";
+      breathRing.className = "absolute w-36 h-36 rounded-full bg-surface-container-high transition-all duration-1000 ease-in-out shadow-inner";
+      breathGlow.className = "absolute w-44 h-44 rounded-full bg-secondary-fixed/40 transition-all duration-1000 ease-in-out";
+    }
+
+    if (actionBtn) actionBtn.addEventListener('click', startBreathing);
+    if (resetBtn) resetBtn.addEventListener('click', resetBreathing);
+
+    // Sound Selector Toggles
+    const soundChips = document.querySelectorAll('.sound-chip');
+    const soundIndicator = document.getElementById('soundPlayingState');
+
+    soundChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        soundChips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary', 'shadow-xs');
+          c.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+        });
+        chip.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+        chip.classList.add('bg-primary', 'text-on-primary', 'shadow-xs');
+        
+        const sound = chip.getAttribute('data-sound');
+        if (soundIndicator) {
+          soundIndicator.textContent = sound;
+        }
+      });
+    });
+
+    // Mood Tags Interactive Affirmations
+    const moodReflections = {
+      "Overwhelmed": "It is okay to stop doing and just exist. Lower the bar for today. One soft breath at a time.",
+      "Peaceful": "Peaceful moments nurture resilience. Hold onto this gentle calmness throughout your day.",
+      "Anxious": "Your nervous system is trying to protect you. Remind your body: right now, in this second, you are safe.",
+      "Hopeful": "Carry this gentle spark like a warm lantern. Celebrate your quiet progress.",
+      "Exhausted": "Rest is not earned; it is essential. Permit your body deep and unapologetic stillness.",
+      "Stressed": "Loosen your shoulders, unclamp your jaw. You do not have to solve tomorrow today."
+    };
+
+    const moodButtons = document.querySelectorAll('.mood-pill');
+    const reflectionBox = document.getElementById('moodReflectionBox');
+
+    moodButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        moodButtons.forEach(b => {
+          b.classList.remove('bg-surface-container-high', 'font-semibold', 'shadow-xs');
+          b.classList.add('bg-surface-container-low');
+        });
+        btn.classList.remove('bg-surface-container-low');
+        btn.classList.add('bg-surface-container-high', 'font-semibold', 'shadow-xs');
+
+        const textKey = btn.innerText.replace(/[^a-zA-Z]/g, '').trim();
+        if (moodReflections[textKey] && reflectionBox) {
+          reflectionBox.innerHTML = `
+            <span class="material-symbols-outlined text-secondary text-[22px]">self_improvement</span>
+            <p class="font-body-sm text-body-sm leading-normal">"${moodReflections[textKey]}"</p>
+          `;
+        }
+      });
+    });
+
+    // Safe Space Encrypted Journal Micro-Feedback
+    const saveBtn = document.getElementById('saveJournalBtn');
+    const journalArea = document.getElementById('journalArea');
+
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => {
+        if (!journalArea || !journalArea.value.trim()) return;
+        const originalText = saveBtn.innerHTML;
+        saveBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[16px] text-tertiary-fixed">verified</span>
+          <span>Encrypted to Vault</span>
+        `;
+        saveBtn.classList.replace('bg-secondary', 'bg-tertiary');
+
+        setTimeout(() => {
+          if (journalArea) journalArea.value = '';
+          saveBtn.innerHTML = originalText;
+          saveBtn.classList.replace('bg-tertiary', 'bg-secondary');
+        }, 2200);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(94,59,77,0.06)]" data-active-classes="text-primary bg-surface-container-high font-semibold"><div class="h-20 px-space-xs flex items-center justify-around"><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="home-dashboard" href="#"><span class="material-symbols-outlined text-[24px]">hevc</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Home</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="symptoms-care" href="#"><span class="material-symbols-outlined text-[24px]">stethoscope</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Symptoms</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="mind-wellness" href="#"><span class="material-symbols-outlined text-[24px]">self_improvement</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Wellness</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="nearby-clinics-maps" href="#"><span class="material-symbols-outlined text-[24px]">local_hospital</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Clinics</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="consultations" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Consult</span></a></div></nav></body></html>

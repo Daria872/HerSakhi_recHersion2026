@@ -1,0 +1,6 @@
+{
+  "name": "HerSakhi • SheShines",
+  "description": "Empowering, dignified, AI-assisted women's and non-binary healthcare platform across India with multilingual care, rural navigation, and clinical guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

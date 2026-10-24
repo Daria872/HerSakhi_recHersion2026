@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>SheShines (HerSakhi)</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fff8f9;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#807478", "on-primary": "#ffffff", "on-primary-fixed": "#2e1222", "tertiary-fixed-dim": "#adcebe", "tertiary-container": "#2e4c40", "surface-container-lowest": "#ffffff", "primary": "#452536", "on-surface": "#23191f", "secondary": "#98434c", "surface-bright": "#fff8f9", "error-container": "#ffdad6", "on-secondary": "#ffffff", "inverse-primary": "#e9b9cf", "on-primary-container": "#d5a7bc", "surface": "#fff8f9", "on-tertiary-fixed-variant": "#2f4d40", "surface-variant": "#f0dee6", "on-background": "#23191f", "surface-container-high": "#f6e3ec", "surface-tint": "#795366", "tertiary-fixed": "#c8ead9", "surface-dim": "#e8d5de", "outline-variant": "#d2c3c8", "secondary-container": "#fe959d", "surface-container-low": "#fff0f6", "secondary-fixed-dim": "#ffb2b7", "secondary-fixed": "#ffdadb", "on-secondary-fixed": "#40010e", "on-surface-variant": "#4f4448", "on-secondary-fixed-variant": "#7a2c36", "primary-fixed-dim": "#e9b9cf", "on-error": "#ffffff", "inverse-on-surface": "#ffecf4", "tertiary": "#17352a", "on-secondary-container": "#782b34", "primary-fixed": "#ffd8e9", "on-tertiary-container": "#9bbbac", "background": "#fff8f9", "surface-container-highest": "#f0dee6", "surface-container": "#fce9f1", "inverse-surface": "#382d34", "primary-container": "#5e3b4d", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "error": "#ba1a1a", "on-primary-fixed-variant": "#5f3c4e", "on-tertiary-fixed": "#012016" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "margin-tablet": "2rem", "margin": "1rem", "space-xl": "2.5rem", "gutter": "1rem", "gutter-desktop": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "margin-desktop": "3rem", "gutter-tablet": "1.5rem" }, "fontFamily": { "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "headline-md": ["Playfair Display"], "title-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Playfair Display"], "headline-lg": ["Playfair Display"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(94,59,77,0.05)]"><div class="h-20 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="SheShines Emblem" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VJB4BQAnu52zg06dSAuVGnTqXHoyeZnZZsI2o3G0biiIq7B2U8L_wlXM34b4eUPz6Sw5l7eTwAH4ZXdK2G_hfrunSwQOBaGLyFdQoqAEz8AX6Td7k4ECHRVV4pm1Y56Diw78d88MdGDA9rc45R_MqSYRhXwFGvaeg6quKMmIJR4vK-0TLHjc-pb0PakNUqMbhBgoRhHqffOYBwUnRpyfhREGeOiDZ4SHEpSC_ZRnTRloyc5vqyZowNStI"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">SheShines</span></div><span class="font-label-sm text-label-sm text-secondary font-medium tracking-wide leading-none">HerSakhi • हरसखी</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button class="min-h-[44px] min-w-[44px] px-space-sm py-space-xs bg-surface-container-low hover:bg-surface-container rounded-full flex items-center gap-1 text-on-surface-variant transition-colors" title="Change Language" type="button"><span class="material-symbols-outlined text-[18px] text-primary">translate</span><span class="font-label-sm text-label-sm font-semibold text-primary">EN / हिं</span></button><button class="min-h-[44px] min-w-[44px] rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-primary transition-colors" title="Accessibility: Font Size &amp; Voice Reading" type="button"><span class="material-symbols-outlined text-[20px]">accessibility_new</span></button><div class="min-w-[44px] min-h-[44px] flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKIayKTabfZJ7BGbBzSmKqsCcKtkNTAETtO6xyhMxGS2zk1jbgmla4qun_2-YN83ctwgxp2piyYLYs1XZhfWmlbhmuLE7Z3x67CuF_TrUJfpjjJ9gu2CvoACA5pdxtyjiIOGIKgTSX5XUEoKl6m12s-MZTfW6R-rlTcLTppvqbfJf5ZN4SA4EKPKNqCb0hBCZxLzlB0F11Fp-4-FsupPdtlOmbFb3ZJI8SVAO02g1rgEiuwtTES9Bk"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-24 bg-surface"><div class="flex flex-col w-full px-space-md py-space-sm gap-space-lg">
+<!-- Safety Quick-Exit & Calm Mode Banner -->
+<div class="flex items-center justify-between bg-surface-container-low px-space-md py-space-xs rounded-full shadow-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-tertiary">verified_user</span>
+<span class="font-label-sm text-label-sm">Safe &amp; Confidential Space</span>
+</div>
+<button class="flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-primary active:scale-95" onclick="handleQuickExit()" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span>
+<span class="font-label-sm text-label-sm font-semibold">Quick Weather Hide</span>
+</button>
+</div>
+<!-- Section Header -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-secondary">
+<span class="material-symbols-outlined text-[20px]">spa</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">HerSakhi Care Companion</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Symptom Journal &amp; Guidance</h1>
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-low flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-outline mt-0.5 shrink-0">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Educational &amp; triage guidance only. HerSakhi does not provide definitive medical diagnosis. Always consult certified medical practitioners.
+      </p>
+</div>
+</div>
+<!-- Interactive Symptom Logger Module -->
+<div class="flex flex-col gap-space-md bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">edit_calendar</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-primary">Log New Observation</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-secondary-fixed/50 px-space-sm py-0.5 rounded-full font-semibold">Today • Step 1 of 3</span>
+</div>
+<!-- Category Selector Chips -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center justify-between">
+<span>Select Category</span>
+<span class="text-tertiary font-normal">Tap to switch</span>
+</label>
+<div class="flex gap-space-xs overflow-x-auto pb-1.5 -mx-1 px-1" id="categoryScroll">
+<button class="category-chip shrink-0 px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-primary text-on-primary shadow-sm" onclick="selectCategory(this, 'menstrual')" type="button">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+          Menstrual &amp; Cycle
+        </button>
+<button class="category-chip shrink-0 px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-high text-on-surface" onclick="selectCategory(this, 'pelvic')" type="button">
+<span class="material-symbols-outlined text-[18px]">healing</span>
+          Pelvic &amp; Abdominal Pain
+        </button>
+<button class="category-chip shrink-0 px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-high text-on-surface" onclick="selectCategory(this, 'hormonal')" type="button">
+<span class="material-symbols-outlined text-[18px]">temp_preferences_custom</span>
+          Hormonal / PCOS
+        </button>
+<button class="category-chip shrink-0 px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-high text-on-surface" onclick="selectCategory(this, 'pregnancy')" type="button">
+<span class="material-symbols-outlined text-[18px]">pregnant_woman</span>
+          Pregnancy &amp; Postpartum
+        </button>
+<button class="category-chip shrink-0 px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-high text-on-surface" onclick="selectCategory(this, 'urinary')" type="button">
+<span class="material-symbols-outlined text-[18px]">science</span>
+          Urinary / Infection
+        </button>
+</div>
+</div>
+<!-- Symptom Tag Multi-Select -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Specific Symptoms Logged</label>
+<div class="flex flex-wrap gap-space-xs">
+<button class="symptom-tag px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1 bg-surface-container-high text-on-surface" onclick="toggleSymptomTag(this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">bloodtype</span>
+          Heavy bleeding
+        </button>
+<button class="symptom-tag px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1 bg-surface-container-high text-on-surface" onclick="toggleSymptomTag(this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">opacity</span>
+          Spotting
+        </button>
+<button class="symptom-tag px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1 bg-primary text-on-primary" onclick="toggleSymptomTag(this)" type="button">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+          Sharp lower abdomen ache
+        </button>
+<button class="symptom-tag px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1 bg-surface-container-high text-on-surface" onclick="toggleSymptomTag(this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">air</span>
+          Bloating
+        </button>
+<button class="symptom-tag px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1 bg-primary text-on-primary" onclick="toggleSymptomTag(this)" type="button">
+<span class="material-symbols-outlined text-[16px]">sentiment_dissatisfied</span>
+          Mood changes
+        </button>
+<button class="symptom-tag px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1 bg-surface-container-high text-on-surface" onclick="toggleSymptomTag(this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">battery_charging_20</span>
+          Fatigue
+        </button>
+</div>
+</div>
+<!-- Severity & Intensity Slider (1 Mild to 5 Severe) -->
+<div class="flex flex-col gap-space-xs p-space-md rounded-DEFAULT bg-surface-container-low">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5" for="intensitySlider">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+          Severity &amp; Intensity
+        </label>
+<span class="font-label-md text-label-md font-semibold px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container" id="severityBadge">
+          Level 3 • Noticeable
+        </span>
+</div>
+<input class="w-full accent-secondary h-2 bg-surface-container-high rounded-lg cursor-pointer my-2" id="intensitySlider" max="5" min="1" oninput="updateSeverity(this.value)" type="range" value="3"/>
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>1: Mild / Ignorable</span>
+<span>3: Moderate</span>
+<span>5: Severe / Restricting</span>
+</div>
+</div>
+<!-- Duration & Pattern Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-tertiary">history_toggle_off</span>
+        Onset &amp; Pattern
+      </label>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="duration-opt p-space-sm rounded-DEFAULT text-left transition-all bg-surface-container-high text-on-surface flex flex-col gap-0.5" onclick="setDurationPattern(this, '2days')" type="button">
+<span class="font-title-md text-title-md font-semibold">Started 2 days ago</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Acute onset</span>
+</button>
+<button class="duration-opt p-space-sm rounded-DEFAULT text-left transition-all bg-primary text-on-primary flex flex-col gap-0.5 shadow-sm" onclick="setDurationPattern(this, 'recurring')" type="button">
+<span class="font-title-md text-title-md font-semibold">Recurring each cycle</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Cyclic phase</span>
+</button>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="w-full py-space-sm px-space-md rounded-full bg-secondary hover:bg-secondary/95 text-on-secondary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-98 transition-transform" onclick="submitSymptomEntry()" type="button">
+<span class="material-symbols-outlined text-[20px]">add_task</span>
+<span>Save to Private Journal</span>
+</button>
+<button class="w-12 h-12 shrink-0 rounded-full bg-tertiary-container text-tertiary-fixed flex items-center justify-center shadow-sm active:scale-95 transition-transform" title="Speak symptoms via voice" type="button">
+<span class="material-symbols-outlined text-[22px]">mic</span>
+</button>
+</div>
+</div>
+<!-- Chronological Symptom Timeline Card -->
+<div class="flex flex-col gap-space-sm bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[22px] text-tertiary">timeline</span>
+<h2 class="font-title-lg text-title-lg text-primary">Symptom Timeline</h2>
+</div>
+<button class="font-label-sm text-label-sm text-secondary hover:underline flex items-center gap-0.5" type="button">
+        View All 14 Logs
+        <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+<!-- Interactive Timeline Items -->
+<div class="flex flex-col gap-space-sm relative pl-4 before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-variant">
+<!-- Entry 1 -->
+<div class="relative flex flex-col gap-1 bg-surface-container-low p-space-sm rounded-DEFAULT transition-all hover:bg-surface-container">
+<div class="absolute -left-[19px] top-3 w-3 h-3 rounded-full bg-secondary ring-4 ring-surface"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-secondary">Oct 12, 2024 • 09:30 AM</span>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Severity 3/5</span>
+</div>
+<p class="font-title-md text-title-md text-primary font-semibold">Moderate cramps &amp; lower lumbar ache</p>
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-space-xs py-0.5 rounded-full text-on-surface">Duration: 2 days</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-space-xs py-0.5 rounded-full text-on-surface">Hot compress applied</span>
+</div>
+</div>
+<!-- Entry 2 -->
+<div class="relative flex flex-col gap-1 bg-surface-container-low p-space-sm rounded-DEFAULT transition-all hover:bg-surface-container">
+<div class="absolute -left-[19px] top-3 w-3 h-3 rounded-full bg-tertiary ring-4 ring-surface"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-tertiary">Sep 28, 2024 • 07:15 PM</span>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed">Cycle Shift</span>
+</div>
+<p class="font-title-md text-title-md text-primary font-semibold">Irregular 38-day cycle noted</p>
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-space-xs py-0.5 rounded-full text-on-surface">Spotting: Day 1</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest px-space-xs py-0.5 rounded-full text-on-surface">PCOS tracker sync</span>
+</div>
+</div>
+<!-- Entry 3 -->
+<div class="relative flex flex-col gap-1 bg-surface-container-low p-space-sm rounded-DEFAULT transition-all hover:bg-surface-container">
+<div class="absolute -left-[19px] top-3 w-3 h-3 rounded-full bg-outline ring-4 ring-surface"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-outline">Sep 14, 2024 • 04:00 PM</span>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Severity 2/5</span>
+</div>
+<p class="font-title-md text-title-md text-primary font-semibold">Mild pelvic tension during ovulation window</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Self-resolved within 12 hours without medication.</span>
+</div>
+</div>
+</div>
+<!-- AI Clinical Structured Summary Card (One-Click Export) -->
+<div class="flex flex-col gap-space-sm bg-primary text-on-primary p-space-md rounded-lg shadow-md relative overflow-hidden">
+<!-- Gentle Ambient Accent Pattern -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-secondary/20 pointer-events-none blur-2xl"></div>
+<div class="flex items-start justify-between gap-space-xs z-10">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[24px] text-primary-fixed">clinical_notes</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed-dim">Doctor-Ready Brief</span>
+<h3 class="font-title-lg text-title-lg font-bold text-on-primary">Clinician Brief Ready</h3>
+</div>
+</div>
+<span class="px-space-xs py-0.5 bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-label-sm text-label-sm font-semibold">
+        HL7 / FHIR Ready
+      </span>
+</div>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim leading-relaxed z-10">
+      Concise medical timeline formatted for your gynecologist visit. Synthesizes pain frequency, bleeding variations, and cycle anomalies into an objective clinical brief.
+    </p>
+<!-- Mini Snapshot Bento -->
+<div class="grid grid-cols-2 gap-space-xs z-10 pt-1">
+<div class="p-space-xs bg-surface/10 rounded-DEFAULT backdrop-blur-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim">Cycle Variance</span>
+<span class="font-title-md text-title-md font-bold text-on-primary">32 - 38 Days</span>
+</div>
+<div class="p-space-xs bg-surface/10 rounded-DEFAULT backdrop-blur-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim">Peak Pain Phase</span>
+<span class="font-title-md text-title-md font-bold text-on-primary">Luteal • Day 26-28</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row items-center gap-space-xs pt-space-xs z-10">
+<button class="w-full py-space-sm px-space-md rounded-full bg-on-primary hover:bg-surface-bright text-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:scale-98 transition-all" onclick="triggerDoctorExport()" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">share</span>
+<span>Download / Share Privately</span>
+</button>
+<button class="w-full sm:w-auto py-space-sm px-space-md rounded-full bg-surface/15 hover:bg-surface/25 text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" onclick="previewSummary()" type="button">
+<span class="material-symbols-outlined text-[18px]">preview</span>
+<span>Preview PDF</span>
+</button>
+</div>
+</div>
+<!-- Visual Healing Companion Card -->
+<div class="flex items-center gap-space-md bg-surface-container-low p-space-md rounded-lg">
+<div class="w-20 h-20 rounded-full overflow-hidden shrink-0 shadow-sm bg-surface">
+<img class="w-full h-full object-cover" data-alt="Warm nurturing healthcare worker in gentle Indian handloom attire talking with compassion, soft daylight illuminating a serene village clinic, pastel rose and sage color palette, dignity and emotional safety." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgGiO01A1Jej5PjD_Mgur_ybKqNJfgaYuoWvO4hTTbGOwhZn28dsrj5cDRojZA-htPfAV-GYUgp84GpnUb5IxAB0zjEGJTn8vqKjIlyXEtD4xLnlvQ5GueFcXwUN22yMH8bIv9YteTxDNQSgeaoOSZHOdo0ALM5osRGEwCfvbpUcG16CSJOY6rlCnfKEct3G50EdnqI_F54OVMYsFIn-tnQVMiVm-uWnQwQmiafLdg7fSaQbXg3yKK"/>
+</div>
+<div class="flex flex-col gap-0.5">
+<h4 class="font-title-md text-title-md text-primary">Need someone to talk to?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ASHA Didis and HerSakhi peer counselors are available for confidential questions without judgment.</p>
+</div>
+</div>
+<!-- Clinically Reviewed Warning Signs & Triage Notice -->
+<div class="flex flex-col gap-space-md bg-error-container/60 p-space-md rounded-lg shadow-sm">
+<div class="flex items-center gap-space-xs text-error">
+<span class="material-symbols-outlined text-[24px]">crisis_alert</span>
+<h2 class="font-title-lg text-title-lg font-bold text-on-surface">Red Flag Warning Signs</h2>
+</div>
+<div class="flex flex-col gap-space-xs">
+<p class="font-label-md text-label-md font-semibold text-error">
+        Seek emergency care or dial medical response immediately if you experience:
+      </p>
+<div class="flex flex-col gap-1.5 text-on-surface">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-error mt-0.5 shrink-0">check_circle</span>
+<span class="font-body-sm text-body-sm">Unexplained fainting, severe dizziness, or loss of balance.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-error mt-0.5 shrink-0">check_circle</span>
+<span class="font-body-sm text-body-sm">Extreme bleeding soaking &gt;2 menstrual pads per hour for 2+ hours consecutively.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-error mt-0.5 shrink-0">check_circle</span>
+<span class="font-body-sm text-body-sm">Sudden, sharp, agonizing one-sided pelvic pain or high fever with pelvic stiffness.</span>
+</div>
+</div>
+</div>
+<!-- Direct Emergency CTA -->
+<a class="w-full py-space-sm px-space-md rounded-full bg-secondary hover:bg-secondary/90 text-on-secondary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md active:scale-98 transition-transform" href="tel:108">
+<span class="material-symbols-outlined text-[20px]">phone_in_talk</span>
+<span>Emergency Helpline / ASHA Connect (108 / 102)</span>
+</a>
+</div>
+</div>
+<!-- Inline Interactive Script for Micro-Interactions -->
+<script>
+  function selectCategory(btn, cat) {
+    const parent = btn.parentElement;
+    parent.querySelectorAll('.category-chip').forEach(el => {
+      el.className = 'category-chip shrink-0 px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-surface-container-high text-on-surface';
+    });
+    btn.className = 'category-chip shrink-0 px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1.5 bg-primary text-on-primary shadow-sm';
+  }
+
+  function toggleSymptomTag(btn) {
+    const isSelected = btn.classList.contains('bg-primary');
+    if (isSelected) {
+      btn.className = 'symptom-tag px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1 bg-surface-container-high text-on-surface';
+    } else {
+      btn.className = 'symptom-tag px-space-md py-space-xs rounded-full font-label-md text-label-md transition-all flex items-center gap-1 bg-primary text-on-primary';
+    }
+  }
+
+  function updateSeverity(val) {
+    const badge = document.getElementById('severityBadge');
+    const descriptions = {
+      '1': 'Level 1 • Very Mild',
+      '2': 'Level 2 • Mild / Tolerable',
+      '3': 'Level 3 • Noticeable',
+      '4': 'Level 4 • Intense / Disruptive',
+      '5': 'Level 5 • Severe / Unbearable'
+    };
+    badge.innerText = descriptions[val] || 'Level ' + val;
+  }
+
+  function setDurationPattern(btn, type) {
+    const parent = btn.parentElement;
+    parent.querySelectorAll('.duration-opt').forEach(el => {
+      el.className = 'duration-opt p-space-sm rounded-DEFAULT text-left transition-all bg-surface-container-high text-on-surface flex flex-col gap-0.5';
+      const sub = el.querySelector('span:last-child');
+      if (sub) sub.className = 'font-label-sm text-label-sm text-on-surface-variant';
+    });
+    btn.className = 'duration-opt p-space-sm rounded-DEFAULT text-left transition-all bg-primary text-on-primary flex flex-col gap-0.5 shadow-sm';
+    const sub = btn.querySelector('span:last-child');
+    if (sub) sub.className = 'font-label-sm text-label-sm text-on-primary-container';
+  }
+
+  function submitSymptomEntry() {
+    alert('Entry securely saved to your encrypted local health vault.');
+  }
+
+  function triggerDoctorExport() {
+    alert('Encrypted Clinician Summary PDF generated. Ready for secure WhatsApp or Doctor Email dispatch.');
+  }
+
+  function previewSummary() {
+    alert('Displaying clinical brief preview formatted according to ICMR & WHO outpatient summary guidelines.');
+  }
+
+  function handleQuickExit() {
+    window.location.href = 'https://www.google.com/search?q=delhi+weather+today';
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(94,59,77,0.06)]" data-active-classes="text-primary bg-surface-container-high font-semibold"><div class="h-20 px-space-xs flex items-center justify-around"><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="home-dashboard" href="#"><span class="material-symbols-outlined text-[24px]">hevc</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Home</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="symptoms-care" href="#"><span class="material-symbols-outlined text-[24px]">stethoscope</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Symptoms</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="mind-wellness" href="#"><span class="material-symbols-outlined text-[24px]">self_improvement</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Wellness</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="nearby-clinics-maps" href="#"><span class="material-symbols-outlined text-[24px]">local_hospital</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Clinics</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="consultations" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Consult</span></a></div></nav></body></html>

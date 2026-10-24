@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>SheShines (HerSakhi)</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fff8f9;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#807478", "on-primary": "#ffffff", "on-primary-fixed": "#2e1222", "tertiary-fixed-dim": "#adcebe", "tertiary-container": "#2e4c40", "surface-container-lowest": "#ffffff", "primary": "#452536", "on-surface": "#23191f", "secondary": "#98434c", "surface-bright": "#fff8f9", "error-container": "#ffdad6", "on-secondary": "#ffffff", "inverse-primary": "#e9b9cf", "on-primary-container": "#d5a7bc", "surface": "#fff8f9", "on-tertiary-fixed-variant": "#2f4d40", "surface-variant": "#f0dee6", "on-background": "#23191f", "surface-container-high": "#f6e3ec", "surface-tint": "#795366", "tertiary-fixed": "#c8ead9", "surface-dim": "#e8d5de", "outline-variant": "#d2c3c8", "secondary-container": "#fe959d", "surface-container-low": "#fff0f6", "secondary-fixed-dim": "#ffb2b7", "secondary-fixed": "#ffdadb", "on-secondary-fixed": "#40010e", "on-surface-variant": "#4f4448", "on-secondary-fixed-variant": "#7a2c36", "primary-fixed-dim": "#e9b9cf", "on-error": "#ffffff", "inverse-on-surface": "#ffecf4", "tertiary": "#17352a", "on-secondary-container": "#782b34", "primary-fixed": "#ffd8e9", "on-tertiary-container": "#9bbbac", "background": "#fff8f9", "surface-container-highest": "#f0dee6", "surface-container": "#fce9f1", "inverse-surface": "#382d34", "primary-container": "#5e3b4d", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "error": "#ba1a1a", "on-primary-fixed-variant": "#5f3c4e", "on-tertiary-fixed": "#012016" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "margin-tablet": "2rem", "margin": "1rem", "space-xl": "2.5rem", "gutter": "1rem", "gutter-desktop": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "margin-desktop": "3rem", "gutter-tablet": "1.5rem" }, "fontFamily": { "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "headline-md": ["Playfair Display"], "title-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Playfair Display"], "headline-lg": ["Playfair Display"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(94,59,77,0.05)]"><div class="h-20 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="SheShines Emblem" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VJB4BQAnu52zg06dSAuVGnTqXHoyeZnZZsI2o3G0biiIq7B2U8L_wlXM34b4eUPz6Sw5l7eTwAH4ZXdK2G_hfrunSwQOBaGLyFdQoqAEz8AX6Td7k4ECHRVV4pm1Y56Diw78d88MdGDA9rc45R_MqSYRhXwFGvaeg6quKMmIJR4vK-0TLHjc-pb0PakNUqMbhBgoRhHqffOYBwUnRpyfhREGeOiDZ4SHEpSC_ZRnTRloyc5vqyZowNStI"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">SheShines</span></div><span class="font-label-sm text-label-sm text-secondary font-medium tracking-wide leading-none">HerSakhi • हरसखी</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button class="min-h-[44px] min-w-[44px] px-space-sm py-space-xs bg-surface-container-low hover:bg-surface-container rounded-full flex items-center gap-1 text-on-surface-variant transition-colors" title="Change Language" type="button"><span class="material-symbols-outlined text-[18px] text-primary">translate</span><span class="font-label-sm text-label-sm font-semibold text-primary">EN / हिं</span></button><button class="min-h-[44px] min-w-[44px] rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-primary transition-colors" title="Accessibility: Font Size &amp; Voice Reading" type="button"><span class="material-symbols-outlined text-[20px]">accessibility_new</span></button><div class="min-w-[44px] min-h-[44px] flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKIayKTabfZJ7BGbBzSmKqsCcKtkNTAETtO6xyhMxGS2zk1jbgmla4qun_2-YN83ctwgxp2piyYLYs1XZhfWmlbhmuLE7Z3x67CuF_TrUJfpjjJ9gu2CvoACA5pdxtyjiIOGIKgTSX5XUEoKl6m12s-MZTfW6R-rlTcLTppvqbfJf5ZN4SA4EKPKNqCb0hBCZxLzlB0F11Fp-4-FsupPdtlOmbFb3ZJI8SVAO02g1rgEiuwtTES9Bk"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Emergency / Discreet Quick Exit Safe Bar -->
+<div class="w-full px-space-md py-space-xs flex justify-end items-center">
+<button aria-label="Discreet exit to weather view" class="min-h-[44px] px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-dim transition-all flex items-center gap-space-xs shadow-sm" id="quick-exit-btn" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">cloud_sync</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant">Discreet Exit • Weather</span>
+</button>
+</div>
+<div class="px-space-md flex flex-col gap-space-lg pb-space-xl">
+<!-- 1. Welcoming Personalized Banner Card -->
+<div class="relative overflow-hidden rounded-lg bg-surface-container-low shadow-sm p-space-lg flex flex-col gap-space-md">
+<!-- Decorative Organic Blossom Aura -->
+<div class="absolute -top-12 -right-12 w-40 h-40 bg-secondary-fixed/40 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute bottom-0 right-1/4 w-32 h-32 bg-primary-fixed/30 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Namaste, Ananya 🌸</h1>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sun, 18 Oct • Have a gentle and nourished day.</p>
+</div>
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Warm authentic portrait photograph of a young smiling South Asian Indian woman wearing a soft pastel mauve kurta, bathed in soft golden morning sunlight with gentle indoor foliage bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAERHocO43LIjqLhQZQSAs2NKgUD9mazFUQ08MjBWVgosS2rTGJcXuBCgN7EvVjfr3lyk8NFV6UUEXSipurMV7llSLUJoyvmK3vEYJ509uI6lt_Tbzmm41NSbclA0V1Xd-UswKaL0ArrSSdkwEjlppDj2-iq5-P2551-RqvRuOWQl0iRTVylsYvZs7VSKIpGu73p_6Y9MDWiYpwKzvAXOI1cGHIeqW-p4DfUQspj6S-KZkd7CLS2Bo2"/>
+</div>
+</div>
+<!-- Health Status Badges -->
+<div class="relative z-10 flex flex-wrap gap-space-xs">
+<div class="inline-flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>Cycle Day 14 (Ovulation window)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">self_improvement</span>
+<span>Mood: Calm &amp; Balanced</span>
+</div>
+</div>
+</div>
+<!-- 2. Multilingual AI Voice Assistant Bar (HerSakhi) -->
+<div class="rounded-lg bg-surface-container-highest p-space-md shadow-md flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-title-md text-title-md text-primary font-bold">Ask HerSakhi</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-secondary font-semibold">AI Sakhi</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Hindi, Tamil, English, or your dialect...</p>
+</div>
+</div>
+<!-- Animated Mic Pulse Button -->
+<button aria-label="Tap to speak with HerSakhi Voice Assistant" class="relative group min-w-[48px] min-h-[48px] rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 shadow-md transition-transform active:scale-95" id="voice-sakhi-btn" type="button">
+<span class="absolute inset-0 rounded-full bg-secondary opacity-30 animate-ping"></span>
+<span class="material-symbols-outlined text-[24px] relative z-10">mic</span>
+</button>
+</div>
+<!-- Voice Assist Modal Drawer (Hidden by default, triggered on mic tap) -->
+<div class="hidden fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm flex items-end justify-center px-space-md pb-24" id="voice-overlay">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-lg p-space-lg shadow-xl flex flex-col items-center text-center gap-space-md animate-bounce-short">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary relative">
+<span class="material-symbols-outlined text-[32px]">mic</span>
+<span class="absolute inset-0 rounded-full bg-secondary-fixed animate-ping opacity-40"></span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Sun rahi hoon... Listening to you</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Speak freely about symptoms, pain, cramps, or questions.</p>
+</div>
+<div class="flex gap-space-xs flex-wrap justify-center">
+<span class="px-space-md py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-primary">"Pet dard ho raha hai"</span>
+<span class="px-space-md py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-primary">"Is day 14 normal for cramps?"</span>
+</div>
+<button class="w-full py-space-sm rounded-full bg-primary text-on-primary font-label-lg text-label-lg min-h-[48px] mt-space-xs" id="voice-close-btn" type="button">
+          Close Voice Note
+        </button>
+</div>
+</div>
+<!-- 3. High-Priority Quick Action Grid -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-primary">Essential Care Hub</h2>
+<span class="font-label-md text-label-md text-secondary font-medium">Quick Pathways</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Action 1: Check Symptoms -->
+<a class="col-span-1 rounded-lg bg-surface-container-low p-space-md flex flex-col justify-between gap-space-md shadow-sm hover:bg-surface-container transition-all min-h-[140px] group" href="#">
+<div class="w-11 h-11 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[24px]">stethoscope</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors block">Check Symptoms</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pelvic, breast &amp; somatic care</span>
+</div>
+</a>
+<!-- Action 2: Reproductive Tracker -->
+<a class="col-span-1 rounded-lg bg-surface-container-high p-space-md flex flex-col justify-between gap-space-md shadow-sm hover:bg-surface-container-highest transition-all min-h-[140px] group" href="#">
+<div class="w-11 h-11 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[24px]">calendar_today</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors block">Reproductive Tracker</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cycle, PCOD &amp; hormones</span>
+</div>
+</a>
+<!-- Action 3: Mind & Breath -->
+<a class="col-span-1 rounded-lg bg-surface-container-highest p-space-md flex flex-col justify-between gap-space-md shadow-sm hover:bg-surface-container transition-all min-h-[140px] group" href="#">
+<div class="w-11 h-11 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[24px]">air</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors block">Mind &amp; Breath</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pranayama, calm SOS</span>
+</div>
+</a>
+<!-- Action 4: Find Healthcare -->
+<a class="col-span-1 rounded-lg bg-surface-container-low p-space-md flex flex-col justify-between gap-space-md shadow-sm hover:bg-surface-container transition-all min-h-[140px] group" href="#">
+<div class="w-11 h-11 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[24px]">location_on</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors block">Find Healthcare</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PHCs, ASHA &amp; clinics</span>
+</div>
+</a>
+<!-- Action 5: Book Teleconsult (Featured Full Width Card) -->
+<a class="col-span-2 rounded-lg bg-primary p-space-md flex items-center justify-between text-on-primary shadow-md hover:bg-primary-container transition-all min-h-[64px]" href="#">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">video_call</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-primary font-bold">Book Confidential Teleconsult</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm">From ₹149</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-primary-container">Warm, stigma-free gynaecologists &amp; therapists</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-primary">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 4. Recent Health Snapshot (Cycle Wheel & Interactive Mood Selector) -->
+<div class="rounded-lg bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Cycle &amp; Daily Rhythm</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Luteal transition approaching</p>
+</div>
+<button class="min-h-[44px] px-space-md py-space-xs rounded-full bg-surface-container text-primary font-label-md text-label-md flex items-center gap-1 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+<span>Log</span>
+</button>
+</div>
+<!-- Menstrual Cycle Interactive Visualizer -->
+<div class="flex flex-col sm:flex-row items-center justify-around gap-space-md bg-surface-container-low rounded-lg p-space-md">
+<!-- SVG Progress Donut -->
+<div class="relative w-36 h-36 flex items-center justify-center shrink-0">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Background Ring Track -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#F0DEE6" stroke-width="10"></circle>
+<!-- Past Days Track -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#98434C" stroke-dasharray="251.2" stroke-dashoffset="125.6" stroke-linecap="round" stroke-width="10"></circle>
+<!-- Fertile Window Pulse Indicator -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#E9B9CF" stroke-dasharray="251.2" stroke-dashoffset="188.4" stroke-linecap="round" stroke-width="10"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-md text-headline-md text-primary font-bold leading-none">14</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Days to Next</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs w-full sm:w-auto">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-secondary shrink-0"></span>
+<span class="font-body-sm text-body-sm text-on-surface"><strong>Peak Fertile Window:</strong> Next 48 hrs</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-outline-variant shrink-0"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Expected Period: <strong>01 Nov 2024</strong></span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-tertiary shrink-0"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Natural Progesterone Rising</span>
+</div>
+<p class="font-label-sm text-label-sm text-secondary font-medium pt-1">
+            🌸 Slight pelvic fullness or tenderness is typical today.
+          </p>
+</div>
+</div>
+<!-- Daily Quick Mood & Energy Feedback Selector -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-title-md text-title-md text-primary font-semibold">How are you feeling this afternoon?</label>
+<span class="font-label-sm text-label-sm text-secondary font-bold" id="selected-mood-label">Balanced</span>
+</div>
+<div aria-label="Daily energy and mood status" class="grid grid-cols-5 gap-space-xs" role="radiogroup">
+<button class="mood-btn min-h-[58px] rounded-lg bg-surface-container p-space-xs flex flex-col items-center justify-center gap-1 transition-all text-on-surface-variant hover:bg-surface-container-high" data-mood="Joyful" data-phrase="Joyful &amp; Glowing" type="button">
+<span class="text-xl">✨</span>
+<span class="font-label-sm text-label-sm">Joyful</span>
+</button>
+<button class="mood-btn min-h-[58px] rounded-lg bg-primary text-on-primary p-space-xs flex flex-col items-center justify-center gap-1 transition-all shadow-sm" data-mood="Balanced" data-phrase="Balanced &amp; Centered" type="button">
+<span class="text-xl">🌿</span>
+<span class="font-label-sm text-label-sm font-semibold">Balanced</span>
+</button>
+<button class="mood-btn min-h-[58px] rounded-lg bg-surface-container p-space-xs flex flex-col items-center justify-center gap-1 transition-all text-on-surface-variant hover:bg-surface-container-high" data-mood="Fatigued" data-phrase="Low Energy &amp; Resting" type="button">
+<span class="text-xl">🍵</span>
+<span class="font-label-sm text-label-sm">Fatigued</span>
+</button>
+<button class="mood-btn min-h-[58px] rounded-lg bg-surface-container p-space-xs flex flex-col items-center justify-center gap-1 transition-all text-on-surface-variant hover:bg-surface-container-high" data-mood="Anxious" data-phrase="Anxious / Restless" type="button">
+<span class="text-xl">🌧️</span>
+<span class="font-label-sm text-label-sm">Anxious</span>
+</button>
+<button class="mood-btn min-h-[58px] rounded-lg bg-surface-container p-space-xs flex flex-col items-center justify-center gap-1 transition-all text-on-surface-variant hover:bg-surface-container-high" data-mood="Cramps" data-phrase="Mild Cramps &amp; Ache" type="button">
+<span class="text-xl">🩹</span>
+<span class="font-label-sm text-label-sm">Cramps</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 5. Rural & Community Support Banner (ASHA Sahayak & Low Bandwidth Mode) -->
+<div class="rounded-lg bg-surface-container p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">support_agent</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-primary font-bold">Asha Sahayak • 24x7 Rural Helpline</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Toll-free voice support for remote districts</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0">100% Free</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+        Low-bandwidth mode active: <strong>14 medical guides</strong> and emergency menstrual remedies are saved offline on this phone.
+      </p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<a class="min-h-[48px] px-space-md py-space-xs rounded-full bg-tertiary text-on-tertiary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" href="tel:1800111222">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call 1800-111-222</span>
+</a>
+<button class="min-h-[48px] px-space-md py-space-xs rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">offline_pin</span>
+<span>View Offline Guides</span>
+</button>
+</div>
+</div>
+<!-- 6. Upcoming Care Consultation Tile -->
+<div class="rounded-lg bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Scheduled Consultation</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Booking #SH-4821</span>
+</div>
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-full overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Professional compassionate portrait of an experienced Indian woman doctor gynaecologist in clinical attire and stethoscope with a kind and reassuring smile in clinic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFlnJPILxUNJmOtj5QYWGQ8cVmJIhKihGHMznQU4k0itymJIvMNVfV_uF8tpu4jFcGbV8if-mp22YLVDKPzSieTQb3xf8vq6GNeoQcqktHnkrc6n4VBD6N9BayUDfyeq9MSsDmuYqsM1wFT_EbLskmjIJHPAJgXI7xnFxAQrudZ91eY44n7NhBDbRIj7si0KVpjv1sQqctfE7PnyEQZl5SpRz53S8fBZw4Vd9UmWYbXB9855WgBu_W"/>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-lg text-title-lg text-primary font-bold truncate">Dr. Priya Sharma</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Senior Gynaecologist &amp; Obstetrician</p>
+<div class="flex items-center gap-space-xs text-primary mt-1">
+<span class="material-symbols-outlined text-[18px] text-secondary">videocam</span>
+<span class="font-label-md text-label-md font-semibold">Tomorrow at 4:30 PM (IST)</span>
+</div>
+</div>
+</div>
+<!-- Action Footer for Care Consultation -->
+<div class="flex flex-col sm:flex-row items-center gap-space-xs pt-space-xs">
+<button class="w-full sm:w-auto flex-1 min-h-[48px] px-space-md py-space-sm rounded-full bg-secondary text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm hover:bg-secondary-container hover:text-on-secondary-container transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+<span>Prepare Health Summary</span>
+</button>
+<button class="w-full sm:w-auto min-h-[48px] px-space-md py-space-sm rounded-full bg-surface-container text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-high transition-colors" type="button">
+          Reschedule
+        </button>
+</div>
+</div>
+<!-- 7. Trust & Privacy Reassurance Badge -->
+<div class="rounded-lg bg-surface-container-low p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-center sm:text-left">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold">Ayushman Bharat (ABDM) &amp; HIPAA Compliant</span>
+<span class="font-label-sm text-label-sm text-outline">100% Private, encrypted, and never shared without your consent.</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Zero Ads • Protected Data</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Interactive micro-interactions for Voice Assistant modal & Mood Feedback
+  (function () {
+    const voiceBtn = document.getElementById('voice-sakhi-btn');
+    const voiceOverlay = document.getElementById('voice-overlay');
+    const voiceCloseBtn = document.getElementById('voice-close-btn');
+
+    if (voiceBtn && voiceOverlay && voiceCloseBtn) {
+      voiceBtn.addEventListener('click', function () {
+        voiceOverlay.classList.remove('hidden');
+      });
+      voiceCloseBtn.addEventListener('click', function () {
+        voiceOverlay.classList.add('hidden');
+      });
+      voiceOverlay.addEventListener('click', function (e) {
+        if (e.target === voiceOverlay) {
+          voiceOverlay.classList.add('hidden');
+        }
+      });
+    }
+
+    // Mood Selector Buttons Toggle State
+    const moodButtons = document.querySelectorAll('.mood-btn');
+    const labelDisplay = document.getElementById('selected-mood-label');
+
+    moodButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        moodButtons.forEach(function (b) {
+          b.className = 'mood-btn min-h-[58px] rounded-lg bg-surface-container p-space-xs flex flex-col items-center justify-center gap-1 transition-all text-on-surface-variant hover:bg-surface-container-high';
+        });
+        button.className = 'mood-btn min-h-[58px] rounded-lg bg-primary text-on-primary p-space-xs flex flex-col items-center justify-center gap-1 transition-all shadow-sm';
+        if (labelDisplay) {
+          labelDisplay.textContent = button.getAttribute('data-phrase') || button.getAttribute('data-mood');
+        }
+      });
+    });
+
+    // Discreet Exit Action Trigger
+    const exitBtn = document.getElementById('quick-exit-btn');
+    if (exitBtn) {
+      exitBtn.addEventListener('click', function () {
+        window.location.href = 'https://www.google.com/search?q=weather+today';
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(94,59,77,0.06)]" data-active-classes="text-primary bg-surface-container-high font-semibold"><div class="h-20 px-space-xs flex items-center justify-around"><a aria-current="page" class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 transition-all text-primary bg-surface-container-high font-semibold" data-path="home-dashboard" href="#"><span class="material-symbols-outlined text-[24px]">hevc</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Home</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="symptoms-care" href="#"><span class="material-symbols-outlined text-[24px]">stethoscope</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Symptoms</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="mind-wellness" href="#"><span class="material-symbols-outlined text-[24px]">self_improvement</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Wellness</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="nearby-clinics-maps" href="#"><span class="material-symbols-outlined text-[24px]">local_hospital</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Clinics</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="consultations" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Consult</span></a></div></nav></body></html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>SheShines (HerSakhi)</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fff8f9;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#807478", "on-primary": "#ffffff", "on-primary-fixed": "#2e1222", "tertiary-fixed-dim": "#adcebe", "tertiary-container": "#2e4c40", "surface-container-lowest": "#ffffff", "primary": "#452536", "on-surface": "#23191f", "secondary": "#98434c", "surface-bright": "#fff8f9", "error-container": "#ffdad6", "on-secondary": "#ffffff", "inverse-primary": "#e9b9cf", "on-primary-container": "#d5a7bc", "surface": "#fff8f9", "on-tertiary-fixed-variant": "#2f4d40", "surface-variant": "#f0dee6", "on-background": "#23191f", "surface-container-high": "#f6e3ec", "surface-tint": "#795366", "tertiary-fixed": "#c8ead9", "surface-dim": "#e8d5de", "outline-variant": "#d2c3c8", "secondary-container": "#fe959d", "surface-container-low": "#fff0f6", "secondary-fixed-dim": "#ffb2b7", "secondary-fixed": "#ffdadb", "on-secondary-fixed": "#40010e", "on-surface-variant": "#4f4448", "on-secondary-fixed-variant": "#7a2c36", "primary-fixed-dim": "#e9b9cf", "on-error": "#ffffff", "inverse-on-surface": "#ffecf4", "tertiary": "#17352a", "on-secondary-container": "#782b34", "primary-fixed": "#ffd8e9", "on-tertiary-container": "#9bbbac", "background": "#fff8f9", "surface-container-highest": "#f0dee6", "surface-container": "#fce9f1", "inverse-surface": "#382d34", "primary-container": "#5e3b4d", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "error": "#ba1a1a", "on-primary-fixed-variant": "#5f3c4e", "on-tertiary-fixed": "#012016" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "margin-tablet": "2rem", "margin": "1rem", "space-xl": "2.5rem", "gutter": "1rem", "gutter-desktop": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem", "margin-desktop": "3rem", "gutter-tablet": "1.5rem" }, "fontFamily": { "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg": ["Playfair Display"], "display-lg-mobile": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"], "headline-md": ["Playfair Display"], "title-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Playfair Display"], "headline-lg": ["Playfair Display"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(94,59,77,0.05)]"><div class="h-20 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="SheShines Emblem" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VJB4BQAnu52zg06dSAuVGnTqXHoyeZnZZsI2o3G0biiIq7B2U8L_wlXM34b4eUPz6Sw5l7eTwAH4ZXdK2G_hfrunSwQOBaGLyFdQoqAEz8AX6Td7k4ECHRVV4pm1Y56Diw78d88MdGDA9rc45R_MqSYRhXwFGvaeg6quKMmIJR4vK-0TLHjc-pb0PakNUqMbhBgoRhHqffOYBwUnRpyfhREGeOiDZ4SHEpSC_ZRnTRloyc5vqyZowNStI"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate">SheShines</span></div><span class="font-label-sm text-label-sm text-secondary font-medium tracking-wide leading-none">HerSakhi • हरसखी</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button class="min-h-[44px] min-w-[44px] px-space-sm py-space-xs bg-surface-container-low hover:bg-surface-container rounded-full flex items-center gap-1 text-on-surface-variant transition-colors" title="Change Language" type="button"><span class="material-symbols-outlined text-[18px] text-primary">translate</span><span class="font-label-sm text-label-sm font-semibold text-primary">EN / हिं</span></button><button class="min-h-[44px] min-w-[44px] rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-primary transition-colors" title="Accessibility: Font Size &amp; Voice Reading" type="button"><span class="material-symbols-outlined text-[20px]">accessibility_new</span></button><div class="min-w-[44px] min-h-[44px] flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKIayKTabfZJ7BGbBzSmKqsCcKtkNTAETtO6xyhMxGS2zk1jbgmla4qun_2-YN83ctwgxp2piyYLYs1XZhfWmlbhmuLE7Z3x67CuF_TrUJfpjjJ9gu2CvoACA5pdxtyjiIOGIKgTSX5XUEoKl6m12s-MZTfW6R-rlTcLTppvqbfJf5ZN4SA4EKPKNqCb0hBCZxLzlB0F11Fp-4-FsupPdtlOmbFb3ZJI8SVAO02g1rgEiuwtTES9Bk"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Emergency Quick Discreet Exit Banner (Tactile Safety Feature) -->
+<div class="px-space-md py-space-xs bg-surface-container-high flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span class="font-label-sm text-label-sm">Safe &amp; Confidential Care Session</span>
+</div>
+<button class="flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface text-secondary hover:bg-secondary hover:text-on-secondary transition-all" id="quick-discreet-exit" type="button">
+<span class="material-symbols-outlined text-[14px]">lock_reset</span>
+<span class="font-label-sm text-label-sm font-semibold">Quick Neutral Mode</span>
+</button>
+</div>
+<div class="px-space-md pt-space-md pb-space-lg flex flex-col gap-space-lg">
+<!-- Header Section -->
+<div class="flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">wifi_calling_3</span>
+<span>HerSakhi Direct Clinic Network</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight font-semibold">
+        Consult Top Verified Doctors From Home
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Affordable, private gynaecological, mental wellness, and general health care in your language.
+      </p>
+</div>
+<!-- Active Consultation Immediate Action Card (Waiting Room Hub) -->
+<section class="relative overflow-hidden rounded-lg bg-surface-container-low shadow-md p-space-md flex flex-col gap-space-md">
+<!-- Glow ambient decorative pill -->
+<div class="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-secondary-container/30 blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between gap-space-sm relative z-10">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Warm studio photographic portrait of Dr. Fatima Sheikh, an Indian female gynaecologist smiling empathetically in a gentle plum stethoscope and cream medical attire, warm soft light, caring expression, deep dignity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNox7LMx8LiyIi140kHmDV27tQTtS32xHtjf5be87zLxhOsPV6YZVxwpR378LLCnD-yeznO7dhrmJWoLxqGaDoq-k63LS30cbvJTXoWT9XJ41XQxDzQMOjs6SYX0YwAPE3m1yb9p-vusGtFSrw8eBe5svsoTj20zS6HC-JWWohWdF7W8GE_iEP2QX5q8cjrZ4x0UJxnv0bYzbFzL18-uok22thmrFWSdS8OWNufYgLt1Nc8l9_Kb4V"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-container shadow-sm flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"></span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-semibold uppercase tracking-wider">Starting Soon</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold" id="countdown-badge">in 25 mins</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-primary truncate mt-0.5">Upcoming Appointment</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">with Dr. Fatima Sheikh</p>
+</div>
+</div>
+</div>
+<!-- Pre-consult Checklist Interactive Strip -->
+<div class="bg-surface rounded-DEFAULT p-space-sm flex flex-col gap-space-xs relative z-10 shadow-sm">
+<span class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">fact_check</span>
+          Pre-Consult Readiness Checklist
+        </span>
+<div class="grid grid-cols-1 gap-2 pt-1">
+<label class="flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-high/60 cursor-pointer">
+<span class="flex items-center gap-2 text-on-surface text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[20px] text-tertiary-container">task_alt</span>
+              Share AI Symptom Summary
+            </span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold px-2 py-0.5 rounded-full bg-tertiary-fixed">Attached</span>
+</label>
+<div class="flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container cursor-pointer transition-all" id="tech-check-item">
+<span class="flex items-center gap-2 text-on-surface text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">mic_external_on</span>
+              Test Camera / Microphone
+            </span>
+<button class="font-label-sm text-label-sm text-on-secondary bg-secondary px-3 py-1 rounded-full font-semibold hover:bg-secondary/90 transition-colors" id="test-audio-btn" type="button">
+              Test Audio
+            </button>
+</div>
+<div class="flex items-center justify-between p-2 rounded-DEFAULT bg-surface-container-low">
+<span class="flex items-center gap-2 text-on-surface text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">signal_cellular_alt_2_bar</span>
+              Low Bandwidth Audio Mode
+            </span>
+<div class="relative inline-flex items-center">
+<input checked="" class="sr-only peer" id="low-bandwidth-toggle" type="checkbox"/>
+<div class="w-9 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Action Callout -->
+<div class="flex flex-col gap-2 relative z-10">
+<button class="w-full min-h-[52px] px-space-md py-3 rounded-full bg-secondary hover:bg-secondary/95 text-on-secondary font-title-md text-title-md flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-[0.98]" id="enter-waiting-room-btn" type="button">
+<span class="material-symbols-outlined text-[24px]">door_open</span>
+<span>Enter Virtual Waiting Room (Video / Audio)</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+          Doctor Fatima is on SheShines platform and will admit you directly.
+        </p>
+</div>
+</section>
+<!-- Modal / Bottom Sheet Simulation for Waiting Room Live -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden items-end justify-center transition-opacity" id="waiting-room-sheet">
+<div class="w-full max-w-lg bg-surface rounded-t-xl p-space-lg flex flex-col gap-space-md shadow-2xl animate-in slide-in-from-bottom duration-300">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full mx-auto"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary animate-pulse"></span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Private Waiting Room</h3>
+</div>
+<button class="p-1 rounded-full text-on-surface-variant hover:bg-surface-container" id="close-waiting-room" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col items-center text-center gap-space-sm">
+<div class="w-20 h-20 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary relative">
+<span class="material-symbols-outlined text-[36px]">videocam</span>
+<span class="absolute inset-0 rounded-full border-4 border-secondary/30 animate-ping"></span>
+</div>
+<span class="font-title-lg text-title-lg text-primary">You are next in queue</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+            Dr. Fatima Sheikh has your translated symptom profile open. Please do not close this window.
+          </p>
+<div class="flex items-center gap-4 mt-2">
+<button class="p-3 rounded-full bg-surface text-primary shadow-sm hover:bg-surface-container">
+<span class="material-symbols-outlined text-[22px]">mic</span>
+</button>
+<button class="p-3 rounded-full bg-surface text-primary shadow-sm hover:bg-surface-container">
+<span class="material-symbols-outlined text-[22px]">videocam</span>
+</button>
+<button class="p-3 rounded-full bg-surface text-primary shadow-sm hover:bg-surface-container">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+</button>
+</div>
+</div>
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm text-center">
+          Audio-optimized fallback active for seamless 2G/3G connectivity.
+        </div>
+</div>
+</div>
+<!-- Verified Specialists Discovery Directory -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Verified Specialists</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Vetted for trauma-informed, cultural, and regional sensitivity</p>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+          3 Online Today
+        </span>
+</div>
+<!-- Quick Filter Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 no-scrollbar">
+<button class="px-space-md py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shrink-0 shadow-sm" type="button">All Specialties</button>
+<button class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md shrink-0 hover:bg-surface-container-high transition-colors" type="button">Gynaecology</button>
+<button class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md shrink-0 hover:bg-surface-container-high transition-colors" type="button">PCOS &amp; Hormonal</button>
+<button class="px-space-md py-1.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md shrink-0 hover:bg-surface-container-high transition-colors" type="button">Mental Wellness</button>
+</div>
+<!-- Doctor Provider Cards Stack -->
+<div class="flex flex-col gap-space-md">
+<!-- Provider 1: Dr. Fatima Sheikh -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-md">
+<img class="w-16 h-16 rounded-full object-cover shrink-0" data-alt="Empathetic Indian woman doctor Dr. Fatima Sheikh in medical scrubs, holding patient chart gently, natural hospital light, soft warm rose and ivory atmosphere, compassionate clinical care portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk76Z3yl9FJaliuuhQpUoU22eqcMIumk007RWFPmHwhlR_cLh11Fe0tRzF13ZeF2MxcTppf2kXfa3Q3tdwigJWkx6mHVocYPzDJytXoNAnGiZFvGP19RiGrFwIEKLug64tQRq72lCGMTaEiiIkMUwHepNjVP9zBbo4N1zFQ5mruXXzduBWxSGB8e3ZExcrwHrPBhXFsS3ZPQzbc7ZF17dh8D5pELStcu8Ql_Usz5cpjVHFMPZMaWe_"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<h3 class="font-title-lg text-title-lg text-primary truncate font-bold">Dr. Fatima Sheikh</h3>
+<span class="material-symbols-outlined text-[18px] text-tertiary-container shrink-0" title="Verified Specialist">verified</span>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">₹250</span>
+<span class="block font-label-sm text-label-sm text-outline">tele-fee</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">MBBS, MS - Obstetrics &amp; Gynaecology</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-outline">12 yrs exp</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">star</span> 4.9 (420+ Sakhi reviews)
+                </span>
+</div>
+</div>
+</div>
+<!-- Subsidy Badge & Languages -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">volunteer_activism</span>
+              Rural Tele-grant subsidized
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              🗣️ English, Hindi, Urdu
+            </span>
+</div>
+<!-- Availability & Booking Action -->
+<div class="flex items-center justify-between pt-2 border-t border-transparent">
+<div class="flex items-center gap-1.5 text-tertiary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Available Today at 5:00 PM</span>
+</div>
+<button class="px-space-md py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button">
+              Book Appointment
+            </button>
+</div>
+</article>
+<!-- Provider 2: Dr. Kavitha Sundaram -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-md">
+<img class="w-16 h-16 rounded-full object-cover shrink-0" data-alt="South Indian female fertility endocrinologist Dr. Kavitha Sundaram in light mauve saree and lab coat, warm clinic setting, reassuring smile, gentle lighting, authentic healthcare professional portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpWEMgs-Gzqm9mosya7sP2S_6pZ7YUPA9qhyaA0QKP37plnBJNvD2Cz4JGz6NjYUh7E8aCM0FOS6rCa9jIqS_bsFxN106THccZSoxnsPggJm77E546t0U723PFCNvpBPzBp1ECLvaW4eveihVadCLKtAGY3QSfDtWpWL45d-o5cX3Sil0jFN34G5uGoJv32tffoqktdjtprmHaFOecUUCgw9tVT8szwXid3XFLXFKnf5WXBX8oyxJT"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<h3 class="font-title-lg text-title-lg text-primary truncate font-bold">Dr. Kavitha Sundaram</h3>
+<span class="material-symbols-outlined text-[18px] text-tertiary-container shrink-0" title="Verified Specialist">verified</span>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">₹350</span>
+<span class="block font-label-sm text-label-sm text-outline">tele-fee</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">MD - Reproductive Medicine &amp; PCOS Specialist</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-outline">9 yrs exp</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">star</span> 4.8 (290+ reviews)
+                </span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">monitor_heart</span>
+              PCOS / Hormonal Care
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              🗣️ Tamil, English, Kannada
+            </span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-secondary">event_available</span>
+<span>Tomorrow at 10:30 AM</span>
+</div>
+<button class="px-space-md py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button">
+              Book Appointment
+            </button>
+</div>
+</article>
+<!-- Provider 3: Dr. Aruna Patel -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-sm">
+<div class="flex items-start gap-space-md">
+<img class="w-16 h-16 rounded-full object-cover shrink-0" data-alt="Portrait of Dr. Aruna Patel, a gentle female clinical psychologist wearing spectacles and an elegant Indian handloom kurta, peaceful counseling room background with indoor plants, calm empathetic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOcqUuWbQXd4ZhgG5b0ILwTK9t7iaudEQzQVAK0dJ4i5wuzVKfZZGuNInKtEE7g_vQCPJlDZ_RJf_A1bdFJ2q6H7Ak3w9WDUYr3KlDuUKhnMNwTomQe2rr6xCEwCJ0AKBW6EI09iAnJ3vWAVEtWNOt4hEWksnnu4ImasCEubSulTODjPSZajTrjqgKervziMZnsLxXV5onN6vtZ1uGfxb_JKnAUUhyiZ45zD4IFY8iJ5Vbz5S7-TIh"/>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<div class="flex items-center gap-1.5 min-w-0">
+<h3 class="font-title-lg text-title-lg text-primary truncate font-bold">Dr. Aruna Patel</h3>
+<span class="material-symbols-outlined text-[18px] text-tertiary-container shrink-0" title="Verified Specialist">verified</span>
+</div>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">₹400</span>
+<span class="block font-label-sm text-label-sm text-outline">tele-fee</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Clinical Psychologist &amp; Trauma-Informed Therapist</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-outline">14 yrs exp</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">star</span> 5.0 (180+ reviews)
+                </span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">psychology</span>
+              Non-Judgmental Therapy
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              🗣️ Hindi, Gujarati, English
+            </span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-1.5 text-tertiary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Available Today at 6:30 PM</span>
+</div>
+<button class="px-space-md py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button">
+              Book Appointment
+            </button>
+</div>
+</article>
+</div>
+</section>
+<!-- Confidentiality Assurance & Privacy Seal -->
+<section class="rounded-lg bg-surface-container-high p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm text-primary">
+<div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-secondary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[22px]">enhanced_encryption</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-title-md text-title-md text-primary">HerSakhi Dignity &amp; Privacy Shield</h4>
+<span class="font-label-sm text-label-sm text-secondary font-medium">DISHA &amp; Indian Telemedicine Practice Guidelines Compliant</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+        No video recordings stored. Prescriptions sent directly via SMS &amp; encrypted PDF.
+      </p>
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<div class="p-space-sm rounded-DEFAULT bg-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">lock_person</span>
+<span class="font-label-sm text-label-sm text-on-surface">Anonymous Alias Mode</span>
+</div>
+<div class="p-space-sm rounded-DEFAULT bg-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">history_toggle_off</span>
+<span class="font-label-sm text-label-sm text-on-surface">Auto-clear Call Logs</span>
+</div>
+</div>
+</section>
+<!-- Transparent Disclaimer Footer Box -->
+<div class="rounded-DEFAULT bg-surface-container p-space-sm text-center flex flex-col items-center gap-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-outline">info</span>
+<span>Prototype Integration Preview</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline max-w-sm">
+        Live consultations connect through secure WebRTC video room. For obstetric or acute medical emergencies, please visit the nearest district government hospital or dial 108/102.
+      </p>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interactions for Teleconsultation & Waiting Room Prototype
+  (function initTeleconsultUI() {
+    const enterWaitingBtn = document.getElementById('enter-waiting-room-btn');
+    const waitingRoomSheet = document.getElementById('waiting-room-sheet');
+    const closeWaitingBtn = document.getElementById('close-waiting-room');
+    const testAudioBtn = document.getElementById('test-audio-btn');
+    const quickExitBtn = document.getElementById('quick-discreet-exit');
+
+    if (enterWaitingBtn && waitingRoomSheet) {
+      enterWaitingBtn.addEventListener('click', () => {
+        waitingRoomSheet.classList.remove('hidden');
+        waitingRoomSheet.classList.add('flex');
+      });
+    }
+
+    if (closeWaitingBtn && waitingRoomSheet) {
+      closeWaitingBtn.addEventListener('click', () => {
+        waitingRoomSheet.classList.add('hidden');
+        waitingRoomSheet.classList.remove('flex');
+      });
+    }
+
+    if (testAudioBtn) {
+      testAudioBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        testAudioBtn.innerHTML = 'Testing...';
+        testAudioBtn.classList.replace('bg-secondary', 'bg-tertiary-container');
+        setTimeout(() => {
+          testAudioBtn.innerHTML = 'Audio Clear ✓';
+          testAudioBtn.classList.replace('bg-tertiary-container', 'bg-tertiary');
+        }, 1200);
+      });
+    }
+
+    if (quickExitBtn) {
+      quickExitBtn.addEventListener('click', () => {
+        // Quick neutral exit replacing sensitive display instantaneously
+        document.body.innerHTML = `
+          <div style="padding: 2.5rem; text-align: center; font-family: sans-serif; background-color: #f8fafc; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="font-size: 48px; margin-bottom: 12px;">🌤️</div>
+            <h2 style="font-size: 22px; color: #1e293b; margin-bottom: 8px;">New Delhi • 28°C Partly Cloudy</h2>
+            <p style="color: #64748b; font-size: 14px; max-width: 300px;">Humidity 62% • Air Quality Index 142 (Moderate). Sunrise 06:14 AM.</p>
+            <button onclick="location.reload()" style="margin-top: 24px; padding: 8px 18px; border-radius: 9999px; background: #e2e8f0; border: none; font-size: 12px; color: #475569; cursor: pointer;">Return</button>
+          </div>
+        `;
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(94,59,77,0.06)]" data-active-classes="text-primary bg-surface-container-high font-semibold"><div class="h-20 px-space-xs flex items-center justify-around"><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="home-dashboard" href="#"><span class="material-symbols-outlined text-[24px]">hevc</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Home</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="symptoms-care" href="#"><span class="material-symbols-outlined text-[24px]">stethoscope</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Symptoms</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="mind-wellness" href="#"><span class="material-symbols-outlined text-[24px]">self_improvement</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Wellness</span></a><a class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="nearby-clinics-maps" href="#"><span class="material-symbols-outlined text-[24px]">local_hospital</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Clinics</span></a><a aria-current="page" class="min-h-[48px] min-w-[56px] flex flex-col items-center justify-center gap-1 rounded-full px-space-xs py-1 transition-all text-primary bg-surface-container-high font-semibold" data-path="consultations" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm truncate max-w-[58px]">Consult</span></a></div></nav></body></html>
