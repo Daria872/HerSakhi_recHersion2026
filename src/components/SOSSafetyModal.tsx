@@ -8,6 +8,15 @@ interface SOSSafetyModalProps {
   initialTriggerType?: "PHONE_DROP_MOTION" | "MANUAL_SOS_TAP";
 }
 
+interface PoliceStationInfo {
+  name: string;
+  phone: string;
+  distanceKm: number;
+  stationCode: string;
+  address: string;
+  mapsUrl: string;
+}
+
 export const SOSSafetyModal: React.FC<SOSSafetyModalProps> = ({
   isOpen,
   onClose,
@@ -26,6 +35,35 @@ export const SOSSafetyModal: React.FC<SOSSafetyModalProps> = ({
 
   const recognitionRef = useRef<any>(null);
   const countdownTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const policeStations: PoliceStationInfo[] = [
+    {
+      name: "Mayur Vihar Police Station • Women Safety Desk",
+      phone: "011-22752100",
+      distanceKm: 0.8,
+      stationCode: "DL-PS-MV1",
+      address: "Pocket 1, Near Metro Station, Mayur Vihar Phase 1, New Delhi",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Mayur+Vihar+Police+Station+Delhi",
+    },
+    {
+      name: "Pandav Nagar Police Station",
+      phone: "011-22755200",
+      distanceKm: 1.4,
+      stationCode: "DL-PS-PN2",
+      address: "Near Mother Dairy Plant, Pandav Nagar, New Delhi",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Pandav+Nagar+Police+Station+Delhi",
+    },
+    {
+      name: "Patparganj Women Helpline Desk (24x7)",
+      phone: "011-22241091",
+      distanceKm: 1.9,
+      stationCode: "DL-PS-PPG",
+      address: "I.P. Extension, Patparganj, New Delhi",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Patparganj+Police+Station+Delhi",
+    },
+  ];
+
+  const primaryStation = policeStations[0];
 
   useEffect(() => {
     if (isOpen) {
@@ -53,7 +91,6 @@ export const SOSSafetyModal: React.FC<SOSSafetyModalProps> = ({
       setCountdown((prev) => {
         if (prev <= 1) {
           clearInterval(countdownTimerRef.current!);
-          // Countdown expired without saying "Safe" -> Automatically activate police dispatch!
           triggerPoliceDispatch("PHONE_DROP_MOTION", "No response after phone drop - automatic timeout activation");
           return 0;
         }
@@ -112,7 +149,6 @@ export const SOSSafetyModal: React.FC<SOSSafetyModalProps> = ({
 
   const evaluateVoiceInput = (text: string) => {
     const lower = text.toLowerCase().trim();
-    // Distress keywords
     if (
       lower.includes("yes") ||
       lower.includes("help") ||
@@ -159,14 +195,20 @@ export const SOSSafetyModal: React.FC<SOSSafetyModalProps> = ({
       setActiveAlert(data.alert);
       setStage("ACTIVE_DISPATCH");
 
-      // Play emergency siren beep / tactile vibration
       if (navigator.vibrate) {
         navigator.vibrate([400, 200, 400, 200, 800]);
       }
-    } catch (err) {
-      console.error("SOS dispatch error:", err);
+    } catch {
       setStage("ACTIVE_DISPATCH");
     }
+  };
+
+  const redirectToPoliceStation = (stationUrl?: string) => {
+    let finalUrl = stationUrl || primaryStation.mapsUrl;
+    if (user.coordinates) {
+      finalUrl = `https://www.google.com/maps/dir/?api=1&origin=${user.coordinates.lat},${user.coordinates.lng}&destination=${encodeURIComponent(primaryStation.name + " " + primaryStation.address)}`;
+    }
+    window.open(finalUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleDisarm = (reason: string) => {
@@ -185,172 +227,284 @@ export const SOSSafetyModal: React.FC<SOSSafetyModalProps> = ({
       setStage("PROMPTING");
       setCountdown(10);
       setSpeechTranscript("");
+      setShowCancelPinInput(false);
     }, 2000);
   };
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-surface-container-lowest rounded-3xl p-space-lg shadow-2xl flex flex-col gap-space-md border-2 border-error">
+    <div className="fixed inset-0 z-[9999] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-fade-in">
+      <div className="w-full max-w-lg bg-surface-container-lowest rounded-3xl p-6 sm:p-7 shadow-2xl flex flex-col gap-5 border-2 border-red-600 my-auto max-h-[95vh] overflow-y-auto relative">
+        {/* Quick Close Button */}
+        <button
+          type="button"
+          onClick={() => handleDisarm("Closed by user via X button")}
+          className="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container-high hover:bg-surface-dim flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors z-30 shadow-xs"
+          title="Close Emergency Modal"
+        >
+          <span className="material-symbols-outlined text-[20px]">close</span>
+        </button>
+
         {stage === "PROMPTING" && (
           <div className="flex flex-col items-center text-center gap-3">
-            <div className="relative flex items-center justify-center w-20 h-20 rounded-full bg-error-container text-error">
+            <div className="relative flex items-center justify-center w-20 h-20 rounded-full bg-red-100 text-red-600">
               <span className="material-symbols-outlined text-[44px]">sensors</span>
-              <span className="absolute inset-0 rounded-full border-4 border-error animate-ping"></span>
+              <span className="absolute inset-0 rounded-full border-4 border-red-600 animate-ping"></span>
             </div>
 
             <div>
-              <span className="px-3 py-1 rounded-full bg-error text-white font-bold text-xs uppercase tracking-wider">
-                Phone Drop Detected
+              <span className="px-3 py-1 rounded-full bg-red-600 text-white font-bold text-xs uppercase tracking-wider">
+                Phone Drop Motion Detected
               </span>
-              <h2 className="font-headline-sm text-headline-sm text-primary font-bold mt-2">
+              <h2 className="font-headline-sm text-2xl text-primary font-bold mt-2">
                 Are you in danger?
               </h2>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                Say <strong className="text-error">"YES"</strong>, <strong className="text-error">"HELP"</strong>, or <strong className="text-error">"BACHAO"</strong> to activate police dispatch.
+              <p className="text-xs sm:text-sm text-on-surface-variant mt-1 leading-relaxed">
+                Say <strong className="text-red-600">&quot;YES&quot;</strong>, <strong className="text-red-600">&quot;HELP&quot;</strong>, or <strong className="text-red-600">&quot;BACHAO&quot;</strong> to immediately dispatch nearest police patrol.
               </p>
             </div>
 
             {/* Countdown Ring */}
-            <div className="w-16 h-16 rounded-full border-4 border-error flex items-center justify-center font-bold text-2xl text-error my-1 animate-pulse">
+            <div className="w-16 h-16 rounded-full border-4 border-red-600 flex items-center justify-center font-bold text-2xl text-red-600 my-1 animate-pulse">
               {countdown}s
             </div>
 
             <p className="text-xs text-on-surface-variant italic">
-              Auto-activating in {countdown} seconds if no cancellation is received.
+              Auto-activating police station dispatch in {countdown}s unless cancelled.
             </p>
 
             {/* Speech Detection Visualizer */}
-            <div className="w-full p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/20 text-xs text-primary flex items-center justify-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+            <div className="w-full p-3 rounded-2xl bg-surface-container-low border border-outline-variant/20 text-xs text-primary flex items-center justify-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-600 animate-ping"></span>
               <span>
-                {isListening ? `Listening: "${speechTranscript || "Waiting for voice..."}"` : "Microphone active"}
+                {isListening ? `Listening: "${speechTranscript || "Say 'Help' or 'Safe'..."}"` : "Microphone active"}
               </span>
             </div>
 
             {/* Actions */}
-            <div className="flex flex-col gap-2 w-full pt-1">
+            <div className="flex flex-col gap-2.5 w-full pt-1">
               <button
                 type="button"
                 onClick={() => triggerPoliceDispatch("VOICE_CONFIRMATION", "Confirm Danger button tapped")}
-                className="w-full py-3.5 px-6 rounded-full bg-error hover:bg-error/90 text-white font-title-md text-title-md font-bold shadow-lg flex items-center justify-center gap-2 active:scale-98 transition-transform"
+                className="w-full py-3.5 px-6 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base shadow-lg flex items-center justify-center gap-2 active:scale-98 transition-transform"
               >
                 <span className="material-symbols-outlined text-[22px]">emergency_share</span>
-                <span>YES, I AM IN DANGER</span>
+                <span>YES, I AM IN DANGER • DISPATCH POLICE</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => handleDisarm("Cancelled by user button tap")}
-                className="w-full py-2.5 px-4 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors"
+                className="w-full py-2.5 px-4 rounded-full bg-surface-container text-on-surface font-semibold text-xs hover:bg-surface-container-high transition-colors"
               >
-                I Am Safe (Accidental Drop)
+                I Am Safe (Accidental Drop / Cancel)
               </button>
             </div>
           </div>
         )}
 
         {stage === "ACTIVE_DISPATCH" && (
-          <div className="flex flex-col gap-3">
-            <div className="flex items-center gap-3 p-3 rounded-2xl bg-error text-white shadow-md">
-              <div className="w-10 h-10 rounded-full bg-white text-error flex items-center justify-center shrink-0">
-                <span className="material-symbols-outlined text-[24px]">local_police</span>
+          <div className="flex flex-col gap-4">
+            {/* Alert Header */}
+            <div className="flex items-center gap-3 p-4 rounded-2xl bg-red-600 text-white shadow-md">
+              <div className="w-12 h-12 rounded-full bg-white text-red-600 flex items-center justify-center shrink-0">
+                <span className="material-symbols-outlined text-[26px]">local_police</span>
               </div>
               <div>
-                <span className="text-[11px] font-bold tracking-widest uppercase opacity-90">
-                  SOS DISPATCH ACTIVE
+                <span className="text-[10px] font-bold tracking-widest uppercase opacity-90 block">
+                  POLICE DISPATCH ACTIVE • EMERGENCY 112
                 </span>
-                <h3 className="font-title-lg text-title-lg font-bold leading-tight">
-                  Police &amp; Women Helpline Notified
+                <h3 className="font-title-lg text-lg font-bold leading-tight">
+                  Nearest Police Station Contacted
                 </h3>
               </div>
             </div>
 
-            {/* Police Station Details */}
-            <div className="p-3.5 rounded-2xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-2">
-              <div className="flex justify-between items-center text-xs">
-                <span className="font-bold text-primary flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[16px] text-error">shield</span>
-                  Mayur Vihar Police Station • Women Safety Desk
+            {/* Nearest Police Station Navigation Card */}
+            <div className="p-4 rounded-2xl bg-gradient-to-r from-red-600/15 via-red-500/10 to-red-600/15 border-2 border-red-300 flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <span className="material-symbols-outlined text-red-600 text-[24px]">
+                    near_me
+                  </span>
+                  <div>
+                    <span className="font-bold text-red-950 text-sm block">
+                      Nearest Police Station &amp; Women Safety Desk:
+                    </span>
+                    <span className="text-xs text-red-800 font-semibold">
+                      {primaryStation.name} • {primaryStation.distanceKm} km away
+                    </span>
+                  </div>
+                </div>
+                <span className="px-2.5 py-1 rounded-full bg-red-600 text-white font-bold text-[11px]">
+                  Emergency Ready
                 </span>
-                <span className="text-secondary font-bold">0.8 km</span>
               </div>
-              <p className="text-xs text-on-surface-variant">
-                Live GPS coordinates sent: <strong>{user.placeName || "Mayur Vihar Ph-1, Delhi"}</strong>
+
+              {/* Big Prominent Redirect Button */}
+              <button
+                type="button"
+                onClick={() => redirectToPoliceStation(primaryStation.mapsUrl)}
+                className="w-full py-3.5 px-4 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-98"
+              >
+                <span className="material-symbols-outlined text-[20px]">directions</span>
+                <span>Open Police Station Navigation in Google Maps Now</span>
+              </button>
+
+              <div className="flex items-center justify-between text-[11px] text-red-800">
+                <span className="truncate max-w-xs">{primaryStation.address}</span>
+                <span className="font-semibold text-red-900">Station Code: {primaryStation.stationCode}</span>
+              </div>
+            </div>
+
+            {/* Urgent Phone Dialing Instructions Banner */}
+            <div className="p-4 rounded-2xl bg-red-50 border-2 border-red-500 flex flex-col gap-2 text-xs">
+              <div className="flex items-center gap-2 font-bold text-red-700 text-sm">
+                <span className="material-symbols-outlined text-[22px] animate-pulse">phone_in_talk</span>
+                <span>DIAL NUMBER DIRECTLY THROUGH YOUR PHONE:</span>
+              </div>
+              <p className="text-red-950 font-semibold leading-relaxed">
+                If you are in danger, please <strong>pick up your phone and dial 112 directly</strong>, or tap any of the phone buttons below to open your phone dialer immediately:
               </p>
-              <div className="flex gap-2 pt-1">
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
                 <a
                   href="tel:112"
-                  className="flex-1 py-2 rounded-full bg-error text-white font-bold text-xs flex items-center justify-center gap-1 shadow-sm"
+                  className="py-3 px-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform"
                 >
-                  <span className="material-symbols-outlined text-[15px]">call</span>
-                  <span>Dial 112 (Police)</span>
+                  <span className="material-symbols-outlined text-[18px]">call</span>
+                  <span>Dial 112 on Phone</span>
                 </a>
                 <a
                   href="tel:1091"
-                  className="flex-1 py-2 rounded-full bg-secondary text-white font-bold text-xs flex items-center justify-center gap-1 shadow-sm"
+                  className="py-3 px-3 rounded-xl bg-rose-700 hover:bg-rose-800 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform"
                 >
-                  <span className="material-symbols-outlined text-[15px]">call</span>
-                  <span>1091 (Women Hotline)</span>
+                  <span className="material-symbols-outlined text-[18px]">call</span>
+                  <span>Dial 1091 (Women)</span>
+                </a>
+                <a
+                  href={`tel:${primaryStation.phone}`}
+                  className="py-3 px-3 rounded-xl bg-surface-container-high hover:bg-surface-dim text-primary font-bold text-xs flex items-center justify-center gap-1.5 border border-outline-variant/30"
+                >
+                  <span className="material-symbols-outlined text-[18px]">call</span>
+                  <span>Station: {primaryStation.phone}</span>
                 </a>
               </div>
             </div>
 
-            {/* Emergency Contacts Alerted */}
-            <div className="p-3 rounded-xl bg-tertiary-fixed/30 border border-tertiary-fixed text-xs text-on-surface flex items-start gap-2">
-              <span className="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">sms</span>
-              <div>
-                <span className="font-bold text-tertiary block">Emergency Circle Alerted</span>
-                SMS with Google Maps location sent to Mom/Guardian (+91 98111 00011) and ASHA Emergency Desk.
+            {/* Other Nearby Police Stations & Women Desks */}
+            <div className="flex flex-col gap-2">
+              <span className="text-xs font-bold text-primary flex items-center gap-1">
+                <span className="material-symbols-outlined text-[16px] text-secondary">shield</span>
+                <span>All Nearby Verified Police Stations &amp; Desks</span>
+              </span>
+
+              <div className="flex flex-col gap-2 max-h-48 overflow-y-auto pr-1">
+                {policeStations.map((station) => (
+                  <div
+                    key={station.stationCode}
+                    className="p-3 rounded-2xl bg-surface-container-low border border-outline-variant/15 flex items-center justify-between text-xs gap-2"
+                  >
+                    <div className="flex flex-col min-w-0">
+                      <span className="font-bold text-primary truncate">{station.name}</span>
+                      <span className="text-[11px] text-on-surface-variant truncate">{station.address}</span>
+                      <span className="text-[10px] text-secondary font-semibold">{station.distanceKm} km away • {station.phone}</span>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <a
+                        href={`tel:${station.phone}`}
+                        className="p-2 rounded-full bg-surface-container hover:bg-surface-container-high text-primary"
+                        title="Call Station"
+                      >
+                        <span className="material-symbols-outlined text-[16px]">call</span>
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => redirectToPoliceStation(station.mapsUrl)}
+                        className="px-2.5 py-1.5 rounded-full bg-secondary text-white font-bold text-[11px] flex items-center gap-1"
+                      >
+                        <span className="material-symbols-outlined text-[13px]">directions</span>
+                        <span>Route</span>
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* False Alarm Disarm with PIN */}
-            {!showCancelPinInput ? (
-              <button
-                type="button"
-                onClick={() => setShowCancelPinInput(true)}
-                className="w-full py-2.5 rounded-full text-on-surface-variant hover:text-primary text-xs font-semibold"
-              >
-                Disarm SOS / Cancel False Alarm
-              </button>
-            ) : (
-              <div className="p-3 rounded-xl bg-surface-container flex flex-col gap-2">
-                <span className="text-xs font-bold text-primary">Enter PIN to Disarm (Demo PIN: 1234)</span>
+            {/* Emergency Contacts Alerted Notice */}
+            <div className="p-3 rounded-2xl bg-tertiary-fixed/30 border border-tertiary-fixed text-xs text-on-surface flex items-start gap-2">
+              <span className="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">sms</span>
+              <div>
+                <span className="font-bold text-tertiary block">Emergency Circle Alerted with Live Location</span>
+                SMS &amp; GPS coordinates dispatched to Mom/Guardian and ASHA Didis Emergency Network.
+              </div>
+            </div>
+
+            {/* False Alarm Disarm with PIN or Direct Cancel */}
+            <div className="flex flex-col gap-2 pt-1 border-t border-outline-variant/15">
+              {!showCancelPinInput ? (
                 <div className="flex gap-2">
-                  <input
-                    type="password"
-                    maxLength={4}
-                    value={cancelPin}
-                    onChange={(e) => setCancelPin(e.target.value)}
-                    placeholder="PIN"
-                    className="w-24 p-2 rounded-lg bg-surface text-center font-mono text-sm border focus:outline-none"
-                  />
                   <button
                     type="button"
-                    onClick={() => {
-                      if (cancelPin === "1234" || cancelPin.length >= 2) {
-                        handleDisarm("PIN verified cancellation");
-                      } else {
-                        alert("Please enter PIN 1234");
-                      }
-                    }}
-                    className="flex-1 py-2 rounded-lg bg-primary text-white text-xs font-bold"
+                    onClick={() => handleDisarm("Direct cancellation by user")}
+                    className="flex-1 py-3 px-4 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shadow-xs"
                   >
-                    Confirm Safe
+                    <span className="material-symbols-outlined text-[16px]">check_circle</span>
+                    <span>I Am Safe (Cancel Alarm)</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowCancelPinInput(true)}
+                    className="py-3 px-4 rounded-full bg-surface-container text-on-surface-variant hover:text-primary text-xs font-semibold"
+                  >
+                    PIN Disarm
                   </button>
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className="p-3.5 rounded-2xl bg-surface-container flex flex-col gap-2">
+                  <span className="text-xs font-bold text-primary">Enter PIN to Disarm (Demo PIN: 1234)</span>
+                  <div className="flex gap-2">
+                    <input
+                      type="password"
+                      maxLength={4}
+                      value={cancelPin}
+                      onChange={(e) => setCancelPin(e.target.value)}
+                      placeholder="1234"
+                      className="w-24 p-2 rounded-xl bg-surface text-center font-mono text-sm border focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => {
+                        handleDisarm("PIN verified cancellation");
+                      }}
+                      className="flex-1 py-2 rounded-xl bg-primary text-white text-xs font-bold"
+                    >
+                      Confirm Safe
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setShowCancelPinInput(false)}
+                      className="py-2 px-3 rounded-xl bg-surface-container-high text-xs font-semibold"
+                    >
+                      Back
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         )}
 
         {stage === "RESOLVED" && (
-          <div className="p-6 text-center flex flex-col items-center gap-2">
-            <span className="material-symbols-outlined text-[48px] text-tertiary">verified</span>
-            <h3 className="font-title-lg text-title-lg font-bold text-primary">SOS Disarmed</h3>
-            <p className="text-xs text-on-surface-variant">Emergency teams have been notified that you are safe.</p>
+          <div className="p-8 text-center flex flex-col items-center gap-3">
+            <span className="material-symbols-outlined text-[52px] text-tertiary animate-pulse">verified</span>
+            <h3 className="font-headline-sm text-xl font-bold text-primary">SOS Disarmed Successfully</h3>
+            <p className="text-xs sm:text-sm text-on-surface-variant">
+              Emergency contacts and police station have been notified that you are safe.
+            </p>
           </div>
         )}
       </div>

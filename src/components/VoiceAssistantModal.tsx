@@ -145,12 +145,31 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
         speakResponse(assistantMsg.text);
       }
     } catch (err) {
-      console.error("AI Sakhi query failed:", err);
+      console.error("AI Sakhi query failed, using offline clinical reasoning:", err);
+      const q = query.toLowerCase();
+      let tailored = `Namaste Sakhi 🌸 Regarding "${query}": Keep well-hydrated, apply gentle warm compresses if experiencing abdominal ache, and rest in a comfortable posture. If symptoms worsen, connect with our verified doctor in the Consultations tab.`;
+
+      if (/cramp|period pain|mahawari|dard/i.test(q)) {
+        tailored = `Namaste Sakhi 🌸 For period cramps: Apply a warm heating pad or hot-water bottle (~40°C) to your lower abdomen and sip warm ginger or ajwain tea to calm uterine contractions. Balasana (Child's Pose) relaxes tight pelvic muscles.`;
+      } else if (/pcos|pcod|irregular/i.test(q)) {
+        tailored = `Namaste Sakhi 🌸 For PCOS & hormonal rhythm: Focus on low-glycemic foods (ragi, green veggies), sip spearmint tea twice daily to balance androgens, and engage in 30 minutes of brisk walking to support insulin sensitivity.`;
+      } else if (/heavy|bleed|soak|clot/i.test(q)) {
+        tailored = `⚠️ Critical Notice: If you are soaking 2+ pads per hour for 2 hours or passing clots larger than a coin, visit your nearest PHC right away. Hydrate with ORS or coconut water and consume iron-rich moringa/spinach with lemon.`;
+      } else if (/burn|uti|urine|peshab/i.test(q)) {
+        tailored = `💧 For burning during urination: Drink at least 3 liters of water today to flush bacteria out of the urinary tract. Barley water provides quick cooling relief. If back pain or fever appears, get a urine culture test at your clinic.`;
+      } else if (/pregnant|nausea|vomit/i.test(q)) {
+        tailored = `🤰 For pregnancy nausea & morning sickness: Eat dry crackers or roasted chana before getting out of bed in the morning, sip ginger water, take small frequent meals, and take daily 400mcg Folic Acid.`;
+      } else if (/mental|anxiety|stress|pmdd|mood/i.test(q)) {
+        tailored = `🧘 You are not alone, Sakhi. Hormonal shifts before periods lower serotonin. Practice 4-7-8 breathing (inhale 4s, hold 7s, exhale 8s) and call Tele-MANAS at 14416 (24/7 free confidential psychological support).`;
+      } else if (/emergency pill|ipill|contracept/i.test(q)) {
+        tailored = `💊 Emergency contraceptive pills are most effective within 24 hours of unprotected intimacy (up to 72 hours). Mild nausea and period shifts of a few days are common expected side effects.`;
+      }
+
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          text: "I am listening closely, Sakhi. Even though connection had a small hiccup, remember to rest, keep warm, and consult a doctor if severe pain persists.",
+          text: tailored,
           time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
         },
       ]);
@@ -222,7 +241,7 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
             <select
               value={selectedLanguage}
               onChange={(e) => setSelectedLanguage(e.target.value)}
-              className="px-2 py-1 rounded-full bg-surface-container text-primary text-label-sm font-semibold border-none cursor-pointer focus:outline-none"
+              className="px-2.5 py-1 rounded-full bg-surface-container text-primary text-label-sm font-semibold border-none cursor-pointer focus:outline-none"
             >
               <option value="English">English</option>
               <option value="हिन्दी">हिन्दी</option>
@@ -231,6 +250,18 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
               <option value="ಕನ್ನಡ">ಕನ್ನಡ</option>
               <option value="తెలుగు">తెలుగు</option>
             </select>
+
+            <button
+              onClick={() => setMessages([{
+                role: "assistant",
+                text: "Namaste Sakhi 🌸 New chat started. Ask me about any symptom, cramp, period delay, PCOS, pregnancy, or intimate health concern.",
+                time: "Just now",
+              }])}
+              title="Clear conversation"
+              className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"
+            >
+              <span className="material-symbols-outlined text-[16px]">refresh</span>
+            </button>
 
             <button
               onClick={onClose}
@@ -288,7 +319,7 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
           {isLoading && (
             <div className="flex items-center gap-2 p-3 rounded-2xl bg-surface-container-low w-fit text-xs text-on-surface-variant">
               <span className="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
-              <span>HerSakhi is carefully contemplating your question...</span>
+              <span>HerSakhi is carefully formulating tailored recommendations for you...</span>
             </div>
           )}
 
@@ -298,22 +329,46 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
         {/* Suggested Quick Question Chips */}
         <div className="px-3 py-2 bg-surface-container-lowest border-t border-outline-variant/15 flex gap-1.5 overflow-x-auto no-scrollbar">
           <button
-            onClick={() => handleSendMessage("Pet dard ho raha hai, cramps feel sharp.")}
-            className="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-low text-primary text-label-sm font-medium hover:bg-surface-container transition-colors"
+            onClick={() => handleSendMessage("Severe period cramps and lower belly ache")}
+            className="shrink-0 px-3 py-1 rounded-full bg-surface-container-low text-primary text-xs font-semibold hover:bg-surface-container transition-colors border border-outline-variant/20"
           >
-            "Pet dard ho raha hai"
+            🌸 Period Cramps
           </button>
           <button
-            onClick={() => handleSendMessage("Is cycle day 14 normal for mild cramps?")}
-            className="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-low text-primary text-label-sm font-medium hover:bg-surface-container transition-colors"
+            onClick={() => handleSendMessage("PCOS diet tips and irregular periods")}
+            className="shrink-0 px-3 py-1 rounded-full bg-surface-container-low text-primary text-xs font-semibold hover:bg-surface-container transition-colors border border-outline-variant/20"
           >
-            "Is day 14 normal for cramps?"
+            🥗 PCOS / PCOD
           </button>
           <button
-            onClick={() => handleSendMessage("What does luteal phase mean in simple language?")}
-            className="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-low text-primary text-label-sm font-medium hover:bg-surface-container transition-colors"
+            onClick={() => handleSendMessage("Burning sensation during urination and bladder pain")}
+            className="shrink-0 px-3 py-1 rounded-full bg-surface-container-low text-primary text-xs font-semibold hover:bg-surface-container transition-colors border border-outline-variant/20"
           >
-            "What is luteal phase?"
+            💧 UTI / Burning Pee
+          </button>
+          <button
+            onClick={() => handleSendMessage("Heavy bleeding soaking two pads an hour")}
+            className="shrink-0 px-3 py-1 rounded-full bg-surface-container-low text-primary text-xs font-semibold hover:bg-surface-container transition-colors border border-outline-variant/20"
+          >
+            ⚠️ Heavy Bleeding
+          </button>
+          <button
+            onClick={() => handleSendMessage("Morning sickness relief in first trimester")}
+            className="shrink-0 px-3 py-1 rounded-full bg-surface-container-low text-primary text-xs font-semibold hover:bg-surface-container transition-colors border border-outline-variant/20"
+          >
+            🤰 Pregnancy Nausea
+          </button>
+          <button
+            onClick={() => handleSendMessage("Severe mood swings and anxiety before periods")}
+            className="shrink-0 px-3 py-1 rounded-full bg-surface-container-low text-primary text-xs font-semibold hover:bg-surface-container transition-colors border border-outline-variant/20"
+          >
+            🧘 PMDD & Anxiety
+          </button>
+          <button
+            onClick={() => handleSendMessage("Emergency contraceptive pill within 72 hours")}
+            className="shrink-0 px-3 py-1 rounded-full bg-surface-container-low text-primary text-xs font-semibold hover:bg-surface-container transition-colors border border-outline-variant/20"
+          >
+            💊 Emergency Pill
           </button>
         </div>
 
@@ -339,7 +394,7 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-            placeholder={isListening ? "Listening... speak now" : "Type your symptoms, pain or questions..."}
+            placeholder={isListening ? "Listening... speak now" : "Type symptoms: cramps, PCOS, heavy bleeding, UTI..."}
             className="flex-1 py-2.5 px-4 rounded-full bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-sm focus:outline-none border border-outline-variant/20 shadow-inner"
           />
 

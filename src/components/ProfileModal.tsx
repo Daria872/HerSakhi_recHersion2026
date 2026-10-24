@@ -7,6 +7,7 @@ interface ProfileModalProps {
   user: UserProfile;
   onUpdateUser: (updated: Partial<UserProfile>) => void;
   onOpenOnboarding: () => void;
+  onLogout?: () => void;
 }
 
 export const ProfileModal: React.FC<ProfileModalProps> = ({
@@ -15,6 +16,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
   user,
   onUpdateUser,
   onOpenOnboarding,
+  onLogout,
 }) => {
   const [isExporting, setIsExporting] = useState(false);
   const [exportSuccess, setExportSuccess] = useState(false);
@@ -182,6 +184,20 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
 
         {/* Export and Erase Actions */}
         <div className="flex flex-col gap-2 pt-2 border-t border-outline-variant/20">
+          {onLogout && (
+            <button
+              onClick={() => {
+                onClose();
+                onLogout();
+              }}
+              type="button"
+              className="w-full py-2.5 px-4 rounded-full bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary hover:text-on-secondary font-label-md text-label-md font-bold flex items-center justify-center gap-2 transition-all shadow-xs"
+            >
+              <span className="material-symbols-outlined text-[18px]">logout</span>
+              <span>Sign Out / Switch Account</span>
+            </button>
+          )}
+
           <button
             onClick={handleExportData}
             disabled={isExporting}

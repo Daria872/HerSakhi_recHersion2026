@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express";
 import { ai, hasGeminiApiKey } from "../gemini.ts";
 import { evaluateClinicalTriage } from "../triage.ts";
+import { generateTailoredRecommendation } from "../clinicalRecommendations.ts";
 
 export const aiRouter = Router();
 
@@ -79,21 +80,14 @@ CORE CLINICAL PRINCIPLES:
     }
   }
 
-  // Intelligent clinical fallback response if API key is pending
-  let fallbackReply = "";
-  if (language === "हिन्दी") {
-    fallbackReply = `नमस्ते सखी। मैं आपकी बात ध्यानपूर्वक सुन रही हूँ। आपने जो लक्षण बताए हैं, वे अक्सर हार्मोनल बदलाव या तनाव के कारण हो सकते हैं।\n\n• क्या आपको पेट के किसी एक हिस्से में तीव्र दर्द या अत्यधिक रक्तस्राव हो रहा है?\n• कृपया पर्याप्त पानी पिएं और गर्म सिकाई का सहारा लें।\n\nयदि असुविधा अधिक है, तो अपने नज़दीकी प्राथमिक स्वास्थ्य केंद्र (PHC) या हमारी सत्यापित महिला डॉक्टर से परामर्श लें।`;
-  } else if (language === "தமிழ்") {
-    fallbackReply = `வணக்கம் சகி. உங்கள் உடல்நலக் கேள்வியை கவனமாகக் கேட்கிறேன். இந்த அறிகுறிகள் ஹார்மோன் சமநிலையின்மை அல்லது சோர்வு காரணமாக ஏற்படலாம்.\n\n• வலி மிகக் கடுமையாக உள்ளதா அல்லது தலைசுற்றல் உள்ளதா?\n• தயவுசெய்து ஓய்வெடுத்து வெதுவெதுப்பான ஒத்தடம் கொடுக்கவும்.\n\nஅவசியம் தேவைப்பட்டால் அருகிலுள்ள ஆரம்ப சுகாதார நிலையத்தை (PHC) அணுகவும்.`;
-  } else {
-    fallbackReply = `Namaste Sakhi 🌸 I am listening to you with care. Symptoms like "${prompt}" are often linked to cyclic hormonal transitions, fatigue, or pelvic muscle tension.\n\n1. How many days have you noticed this discomfort?\n2. Is the pain centered, or sharp on one specific side?\n\nSelf-care tip: Gentle warm compresses and pelvic rest (such as Balasana) can bring ease. If discomfort intensifies or you feel dizzy, please visit your local PHC or connect with one of our verified gynaecologists.`;
-  }
+  // Dynamic, problem-specific clinical recommendation engine
+  const fallbackReply = generateTailoredRecommendation(prompt, language, context);
 
   return res.json({
     reply: fallbackReply,
     language,
     triage,
-    source: "Clinical Guideline Engine",
+    source: "HerSakhi Clinical Guideline Engine",
   });
 });
 

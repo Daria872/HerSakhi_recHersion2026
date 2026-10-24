@@ -159,7 +159,7 @@ export const OnboardingView: React.FC<OnboardingViewProps> = ({
   };
 
   return (
-    <div className="flex flex-col w-full max-w-xl mx-auto px-space-md pb-space-xl space-y-space-lg pt-2">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-8 pt-4">
       {/* Discrete Privacy & Quick Exit Bar */}
       <div className="flex items-center justify-between pt-space-xs">
         <div className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm">

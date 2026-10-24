@@ -18,12 +18,15 @@ import { SOSSafetyModal } from "./components/SOSSafetyModal";
 import { ReproductiveProblemModal } from "./components/ReproductiveProblemModal";
 import { CareKitsAndDriversModal } from "./components/CareKitsAndDriversModal";
 import { RemindersModal } from "./components/RemindersModal";
+import { Footer } from "./components/Footer";
+import { AboutModal } from "./components/AboutModal";
 import { HomeView } from "./pages/HomeView";
 import { SymptomsView } from "./pages/SymptomsView";
 import { WellnessView } from "./pages/WellnessView";
 import { ConsultationsView } from "./pages/ConsultationsView";
 import { ClinicsView } from "./pages/ClinicsView";
 import { OnboardingView } from "./pages/OnboardingView";
+import { AuthView } from "./pages/AuthView";
 
 export default function App() {
   const [user, setUser] = useState<UserProfile>({
@@ -49,6 +52,8 @@ export default function App() {
     createdAt: new Date().toISOString(),
   });
 
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+
   const [activeTab, setActiveTab] = useState<NavTab>("home-dashboard");
   const [isOnboarding, setIsOnboarding] = useState(false);
   const [activeBooking, setActiveBooking] = useState<ConsultationBooking | null>(null);
@@ -61,6 +66,7 @@ export default function App() {
   const [isOfflineGuidesOpen, setIsOfflineGuidesOpen] = useState(false);
   const [isWaitingRoomOpen, setIsWaitingRoomOpen] = useState(false);
   const [isClinicalBriefOpen, setIsClinicalBriefOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   // Core Sequenced Feature Modals
   const [isReproductiveProblemOpen, setIsReproductiveProblemOpen] = useState(false);
@@ -86,36 +92,6 @@ export default function App() {
         if (data.activeBooking) setActiveBooking(data.activeBooking);
       })
       .catch(console.error);
-
-    // Accelerometer / Device Motion Drop Detection
-    let isDropDetected = false;
-    const handleMotion = (event: DeviceMotionEvent) => {
-      const accel = event.accelerationIncludingGravity;
-      if (!accel || accel.x === null || accel.y === null || accel.z === null) return;
-
-      // Free-fall drop is near 0-2 m/s^2, sharp impact landing is > 25 m/s^2
-      const totalG = Math.sqrt(accel.x * accel.x + accel.y * accel.y + accel.z * accel.z);
-      if ((totalG < 2.5 || totalG > 28.0) && !isDropDetected) {
-        isDropDetected = true;
-        setSosTriggerType("PHONE_DROP_MOTION");
-        setIsSOSOpen(true);
-
-        // Cooldown 15 seconds to prevent re-triggering during handling
-        setTimeout(() => {
-          isDropDetected = false;
-        }, 15000);
-      }
-    };
-
-    if (typeof window !== "undefined" && "DeviceMotionEvent" in window) {
-      window.addEventListener("devicemotion", handleMotion);
-    }
-
-    return () => {
-      if (typeof window !== "undefined" && "DeviceMotionEvent" in window) {
-        window.removeEventListener("devicemotion", handleMotion);
-      }
-    };
   }, []);
 
   const handleUpdateUser = (updates: Partial<UserProfile>) => {
@@ -166,8 +142,32 @@ export default function App() {
     }).catch(console.error);
   };
 
+  const handleLoginSuccess = (loggedInUser: UserProfile, token?: string) => {
+    setUser(loggedInUser);
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("hersakhi_user");
+    localStorage.removeItem("hersakhi_token");
+    setIsAuthenticated(false);
+    setIsProfileOpen(false);
+  };
+
   const isLargeText = user.accessibilityPrefs?.largeText;
   const isHighContrast = user.accessibilityPrefs?.highContrast;
+
+  if (!isAuthenticated) {
+    return (
+      <div
+        className={`min-h-screen bg-surface text-on-surface flex flex-col ${
+          isLargeText ? "large-text" : ""
+        } ${isHighContrast ? "high-contrast" : ""}`}
+      >
+        <AuthView onLoginSuccess={handleLoginSuccess} />
+      </div>
+    );
+  }
 
   return (
     <div
@@ -179,9 +179,17 @@ export default function App() {
       {!isOnboarding && (
         <Header
           user={user}
+          activeTab={activeTab}
+          onChangeTab={setActiveTab}
           onOpenAccessibility={() => setIsAccessibilityOpen(true)}
           onOpenProfile={() => setIsProfileOpen(true)}
           onQuickExit={() => setIsDiscreetExitOpen(true)}
+          onLogout={handleLogout}
+          onOpenSOS={() => {
+            setSosTriggerType("MANUAL_SOS_TAP");
+            setIsSOSOpen(true);
+          }}
+          onOpenAbout={() => setIsAboutOpen(true)}
           onSelectLanguage={(lang) => {
             handleUpdateUser({ language: lang });
             fetch("/api/auth/profile", {
@@ -194,7 +202,7 @@ export default function App() {
       )}
 
       {/* Main View Router */}
-      <main className={`flex-1 flex flex-col relative w-full ${!isOnboarding ? "pt-20 pb-24" : "pt-4 pb-12"}`}>
+      <main className={`flex-1 flex flex-col relative w-full ${!isOnboarding ? "pt-24 sm:pt-28 pb-12" : "pt-4 pb-12"}`}>
         {isOnboarding ? (
           <OnboardingView
             user={user}
@@ -265,7 +273,21 @@ export default function App() {
         )}
       </main>
 
-      {/* Persistent Bottom Navigation Tab Bar */}
+      {/* Responsive Website Footer */}
+      {!isOnboarding && (
+        <Footer
+          activeTab={activeTab}
+          onChangeTab={setActiveTab}
+          onOpenSOS={() => {
+            setSosTriggerType("MANUAL_SOS_TAP");
+            setIsSOSOpen(true);
+          }}
+          onOpenAbout={() => setIsAboutOpen(true)}
+          onQuickExit={() => setIsDiscreetExitOpen(true)}
+        />
+      )}
+
+      {/* Persistent Bottom Navigation Tab Bar (Mobile Only) */}
       {!isOnboarding && (
         <Navbar activeTab={activeTab} onChangeTab={setActiveTab} />
       )}
@@ -289,6 +311,7 @@ export default function App() {
         user={user}
         onUpdateUser={handleUpdateUser}
         onOpenOnboarding={() => setIsOnboarding(true)}
+        onLogout={handleLogout}
       />
 
       <VoiceAssistantModal
@@ -345,6 +368,16 @@ export default function App() {
         isOpen={isRemindersOpen}
         onClose={() => setIsRemindersOpen(false)}
         user={user}
+      />
+
+      <AboutModal
+        isOpen={isAboutOpen}
+        onClose={() => setIsAboutOpen(false)}
+        onOpenSOS={() => {
+          setIsAboutOpen(false);
+          setSosTriggerType("MANUAL_SOS_TAP");
+          setIsSOSOpen(true);
+        }}
       />
     </div>
   );

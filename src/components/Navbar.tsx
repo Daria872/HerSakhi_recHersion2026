@@ -17,7 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onChangeTab }) => {
   ];
 
   return (
-    <nav className="fixed bottom-0 w-full z-40 pb-safe bg-surface/92 backdrop-blur-xl border-t border-outline-variant/15 shadow-[0_-4px_20px_rgba(94,59,77,0.06)]">
+    <nav className="md:hidden fixed bottom-0 w-full z-40 pb-safe bg-surface/92 backdrop-blur-xl border-t border-outline-variant/15 shadow-[0_-4px_20px_rgba(94,59,77,0.06)]">
       <div className="h-18 px-space-xs flex items-center justify-around max-w-2xl mx-auto">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id;
