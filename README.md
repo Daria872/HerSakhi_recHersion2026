@@ -9,9 +9,9 @@ HerSakhi is an AI-powered healthcare platform designed to help women across Indi
 ## 🎬 Demo & Live Application
 
 
-| 🚀 **Live Application** | [Add your deployed link here](https://example.com) |
-| 🎥 **Demo Video** | [Watch the HerSakhi demo](https://example.com) |
-| 💻 **GitHub Repository** | [View source code](https://github.com/your-username/your-repository) |
+| 🚀 **Live Application** | [https://kaleidoscopic-biscotti-beb8af.netlify.app/] |
+| 🎥 **Demo Video** | [https://drive.google.com/file/d/11UteW-m6SS-3fHAsMw7aC4HXgGbh8TZW/view?usp=sharing] |
+| 💻 **GitHub Repository** | [https://github.com/Daria872/HerSakhi_recHersion2026] |
 
 ---
 
