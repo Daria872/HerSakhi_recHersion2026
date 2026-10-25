@@ -129,22 +129,14 @@ Its key differentiators include multilingual voice interaction, personalized acc
 
 ## 🛠️ Technology Stack
 
-Frontend: React, TypeScript, Tailwind CSS
-      ↓
-UI & Animations: Motion for React
-      ↓
-Backend: Python, FastAPI
-      ↓
-Database: PostgreSQL
-      ↓
-AI Integration: Large Language Model (LLM) API
-      ↓
-Voice Processing: Speech-to-Text (STT) and Text-to-Speech (TTS) APIs
-      ↓
-Location Services: Maps and Places API
-      ↓
-Authentication: Secure Authentication Provider or Backend Implementation
-      ↓
+Frontend: React, TypeScript, Tailwind CSS <br>
+UI & Animations: Motion for React <br>
+Backend: Python, FastAPI <br>
+Database: PostgreSQL <br>
+AI Integration: Large Language Model (LLM) API <br>
+Voice Processing: Speech-to-Text (STT) and Text-to-Speech (TTS) APIs <br>
+Location Services: Maps and Places API <br>
+Authentication: Secure Authentication Provider or Backend Implementation <br>
 Development Tools: VS Code, Git, GitHub
 
 ## Setup Instructions
